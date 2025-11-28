@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Building2,
@@ -61,6 +61,17 @@ import s7c from "../assets/expertiseImage/s7c.jpg";
 const Expertise = () => {
   const [activeSection, setActiveSection] = useState(0);
   const [hoveredCard, setHoveredCard] = useState(null);
+  const detailsRef = useRef(null);
+
+  const scrollToDetails = (idx) => {
+    setActiveSection(idx);
+    setTimeout(() => {
+      detailsRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  };
 
   const expertiseData = [
     {
@@ -348,7 +359,7 @@ const Expertise = () => {
                 whileHover={{ y: -10, scale: 1.02 }}
                 onHoverStart={() => setHoveredCard(sector.id)}
                 onHoverEnd={() => setHoveredCard(null)}
-                onClick={() => setActiveSection(idx)}
+                onClick={() => scrollToDetails(idx)}
                 className={`bg-white rounded-3xl shadow-xl border-2 ${sector.borderColor} p-6 md:p-8 cursor-pointer transition-all duration-300 hover:shadow-2xl relative overflow-hidden group`}
               >
                 {/* Background decoration */}
@@ -410,7 +421,10 @@ const Expertise = () => {
       </section>
 
       {/* Detailed Sections */}
-      <section className="bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 py-12 md:py-16 xl:py-20">
+      <section
+        ref={detailsRef}
+        className="bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 py-12 md:py-16 xl:py-20"
+      >
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <motion.div
             initial={{ opacity: 0 }}
