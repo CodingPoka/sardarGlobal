@@ -10,6 +10,8 @@ import About from "./components/About";
 import Certificate from "./components/Certificate";
 import Partners from "./components/Partners";
 import Expertise from "./components/Expertise";
+import TopItems from "./components/TopItems";
+import TopItemDetail from "./components/TopItemDetail";
 import AdminNavbar from "./components/AdminNavbar";
 import AdminLogin from "./components/AdminLogin";
 import AdminDashboard from "./components/AdminDashboard";
@@ -22,6 +24,7 @@ const router = createBrowserRouter([
       <div>
         <Navbar />
         <Home />
+        <TopItems />
         <Certificate />
         <Contact />
       </div>
@@ -96,6 +99,24 @@ const router = createBrowserRouter([
       <div>
         <Navbar />
         <Expertise />
+      </div>
+    ),
+  },
+  {
+    path: "/top-items",
+    element: (
+      <div>
+        <Navbar />
+        <TopItems />
+      </div>
+    ),
+  },
+  {
+    path: "/top-items/:id",
+    element: (
+      <div>
+        <Navbar />
+        <TopItemDetail />
       </div>
     ),
   },

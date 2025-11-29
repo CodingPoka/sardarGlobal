@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import mainLogo from "../assets/logo/mainLogo.png";
 
-
 const navItems = [
   { name: "Home", to: "/" },
   { name: "Our Products", to: "/products" },
@@ -11,7 +10,7 @@ const navItems = [
   { name: "Client", to: "/clients" },
   { name: "Partner", to: "/partners" },
   { name: "Expertise", to: "/expertise" },
-  // { name: "Membership", to: "/membership" },
+
   { name: "Certificate", to: "/certificate" },
 ];
 
@@ -35,9 +34,14 @@ const Navbar = () => {
                 alt="Company Logo"
                 className="h-12 md:h-14 lg:h-16 xl:h-16 w-auto object-contain"
               />
-              <span className="hidden sm:inline-block text-base md:text-lg xl:text-xl font-semibold text-white tracking-tight">
-                SardarGlobal Ltd
-              </span>
+              <div className="hidden sm:flex flex-col">
+                <span className="text-base md:text-lg xl:text-xl font-semibold text-white tracking-tight">
+                  Sardar Global Trading Co. Ltd
+                </span>
+                <span className="text-xs md:text-sm text-amber-400 font-light italic tracking-wide">
+                  ---------- Your Personal Trading Company
+                </span>
+              </div>
             </NavLink>
           </div>
 
