@@ -11,7 +11,7 @@ const navItems = [
   { name: "Client", to: "/clients" },
   { name: "Partner", to: "/partners" },
   { name: "Expertise", to: "/expertise" },
-  { name: "Membership", to: "/membership" },
+  // { name: "Membership", to: "/membership" },
   { name: "Certificate", to: "/certificate" },
 ];
 

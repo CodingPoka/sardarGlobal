@@ -3,21 +3,18 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "./shared/Navbar";
 import Home from "./components/Home";
 import Product from "./components/Product";
-import ProductDetail from "./components/ProductDetail";
 import Client from "./components/Clients";
 import Contact from "./components/Contact";
-import Membership from "./components/Membership";
+// import Membership from "./components/Membership";
 import About from "./components/About";
 import Certificate from "./components/Certificate";
 import Partners from "./components/Partners";
 import Expertise from "./components/Expertise";
 import AdminNavbar from "./components/AdminNavbar";
-import AdminFooter from "./components/AdminFooter";
 import AdminLogin from "./components/AdminLogin";
 import AdminDashboard from "./components/AdminDashboard";
 import AdminTopItems from "./components/AdminTopItems";
 import AdminProduct from "./components/AdminProduct";
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,24 +24,6 @@ const router = createBrowserRouter([
         <Home />
         <Certificate />
         <Contact />
-      </div>
-    ),
-  },
-  {
-    path: "/product",
-    element: (
-      <div>
-        <Navbar />
-        <Product />
-      </div>
-    ),
-  },
-  {
-    path: "/product/:categoryId/:productId",
-    element: (
-      <div>
-        <Navbar />
-        <ProductDetail />
       </div>
     ),
   },
@@ -75,15 +54,15 @@ const router = createBrowserRouter([
       </div>
     ),
   },
-  {
-    path: "/membership",
-    element: (
-      <div>
-        <Navbar />
-        <Membership />
-      </div>
-    ),
-  },
+  // {
+  //   path: "/membership",
+  //   element: (
+  //     <div>
+  //       <Navbar />
+  //       <Membership />
+  //     </div>
+  //   ),
+  // },
   {
     path: "/about",
     element: (
@@ -131,30 +110,27 @@ const router = createBrowserRouter([
   {
     path: "/admin/AdminDashboard/sardarGlobal/bangladesh/trade",
     element: (
-      <div className="flex flex-col min-h-screen">
+      <div>
         <AdminNavbar />
         <AdminDashboard />
-        <AdminFooter />
       </div>
     ),
   },
   {
     path: "/admin/AdminTopItems/sardarGlobal/bangladesh/trade",
     element: (
-      <div className="flex flex-col min-h-screen">
+      <div>
         <AdminNavbar />
         <AdminTopItems />
-        <AdminFooter />
       </div>
     ),
   },
   {
     path: "/admin/AdminProduct/sardarGlobal/bangladesh/trade",
     element: (
-      <div className="flex flex-col min-h-screen">
+      <div>
         <AdminNavbar />
         <AdminProduct />
-        <AdminFooter />
       </div>
     ),
   },
