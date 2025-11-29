@@ -17,6 +17,7 @@ import AdminLogin from "./components/AdminLogin";
 import AdminDashboard from "./components/AdminDashboard";
 import AdminTopItems from "./components/AdminTopItems";
 import AdminProduct from "./components/AdminProduct";
+import Footer from "./shared/Footer";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
         <TopItems />
         <Certificate />
         <Contact />
+        <Footer />
       </div>
     ),
   },
@@ -36,6 +38,7 @@ const router = createBrowserRouter([
       <div>
         <Navbar />
         <Product />
+        <Footer />
       </div>
     ),
   },
@@ -45,6 +48,7 @@ const router = createBrowserRouter([
       <div>
         <Navbar />
         <Client />
+        <Footer />
       </div>
     ),
   },
@@ -54,24 +58,18 @@ const router = createBrowserRouter([
       <div>
         <Navbar />
         <Contact />
+        <Footer />
       </div>
     ),
   },
-  // {
-  //   path: "/membership",
-  //   element: (
-  //     <div>
-  //       <Navbar />
-  //       <Membership />
-  //     </div>
-  //   ),
-  // },
+
   {
     path: "/about",
     element: (
       <div>
         <Navbar />
         <About />
+        <Footer />
       </div>
     ),
   },
@@ -81,6 +79,7 @@ const router = createBrowserRouter([
       <div>
         <Navbar />
         <Certificate />
+        <Footer />
       </div>
     ),
   },
@@ -90,6 +89,7 @@ const router = createBrowserRouter([
       <div>
         <Navbar />
         <Partners />
+        <Footer />
       </div>
     ),
   },
@@ -99,6 +99,7 @@ const router = createBrowserRouter([
       <div>
         <Navbar />
         <Expertise />
+        <Footer />
       </div>
     ),
   },
@@ -108,6 +109,7 @@ const router = createBrowserRouter([
       <div>
         <Navbar />
         <TopItems />
+        <Footer />
       </div>
     ),
   },
@@ -117,6 +119,7 @@ const router = createBrowserRouter([
       <div>
         <Navbar />
         <TopItemDetail />
+        <Footer />
       </div>
     ),
   },

@@ -1,11 +1,11 @@
-
-
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import slide1 from "../assets/homeImage/slide1.jpg";
 import slide2 from "../assets/homeImage/slide2.jpg";
 import slide3 from "../assets/homeImage/slide3.jpeg";
 import slide4 from "../assets/homeImage/slide4.jpg";
+import slide5 from "../assets/homeImage/slide5.jpeg";
+import slide6 from "../assets/homeImage/slide6.png";
 
 const slides = [
   {
@@ -27,6 +27,18 @@ const slides = [
     image: slide4,
     title: "Supporting UN, NGOs & Government Projects",
     subtitle: "Delivering Relief Items, Lab Equipment & Technical Supplies",
+  },
+  {
+    image: slide5,
+    title: "Advanced Artificial Insemination Solutions",
+    subtitle:
+      "Delivering high-quality AI tools & biotechnology support for modern livestock breeding.",
+  },
+  {
+    image: slide6,
+    title: "Innovative AI Technology for Livestock Productivity",
+    subtitle:
+      "Supplying semen straws, AI guns, sheaths, gloves, and LN₂ containers for efficient breeding operations.",
   },
 ];
 
@@ -79,6 +91,28 @@ const titleContainerVariants = [
       },
     },
   },
+  // Slide 5 – tech style
+  {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.04,
+        delayChildren: 0.02,
+      },
+    },
+  },
+  // Slide 6 – modern bounce
+  {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+        delayChildren: 0.03,
+      },
+    },
+  },
 ];
 
 /**
@@ -122,6 +156,29 @@ const wordVariants = [
       transition: { duration: 0.5, ease: "easeOut" },
     },
   },
+  // Slide 5 – rotate + zoom (tech style)
+  {
+    hidden: { opacity: 0, scale: 0.7, rotateX: 45 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotateX: 0,
+      transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+    },
+  },
+  // Slide 6 – bounce zoom
+  {
+    hidden: { opacity: 0, scale: 0.5 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        type: "spring",
+        bounce: 0.4,
+      },
+    },
+  },
 ];
 
 /**
@@ -163,6 +220,73 @@ const subtitleVariants = [
       scale: 1,
       transition: { duration: 0.45, delay: 0.22, ease: [0.16, 1, 0.3, 1] },
     },
+  },
+  // Slide 5 – fade + slide from bottom
+  {
+    hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: { duration: 0.5, delay: 0.25, ease: "easeOut" },
+    },
+  },
+  // Slide 6 – elastic bounce
+  {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        delay: 0.2,
+        type: "spring",
+        bounce: 0.3,
+      },
+    },
+  },
+];
+
+/**
+ * Image animation variants - different for each slide
+ */
+const imageVariants = [
+  // Slide 1 – Ken Burns zoom in
+  {
+    initial: { scale: 1.2, opacity: 0.8 },
+    animate: { scale: 1, opacity: 1 },
+    transition: { duration: 2, ease: "easeOut" },
+  },
+  // Slide 2 – Slide from right with zoom
+  {
+    initial: { scale: 1.3, x: 100 },
+    animate: { scale: 1, x: 0 },
+    transition: { duration: 1.8, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+  // Slide 3 – Zoom out with rotation
+  {
+    initial: { scale: 1.4, rotate: 2 },
+    animate: { scale: 1, rotate: 0 },
+    transition: { duration: 2.2, ease: "easeOut" },
+  },
+  // Slide 4 – Pan and zoom (left to center)
+  {
+    initial: { scale: 1.25, x: -80 },
+    animate: { scale: 1, x: 0 },
+    transition: { duration: 2, ease: [0.16, 1, 0.3, 1] },
+  },
+  // Slide 5 – Blur zoom in (tech style)
+  {
+    initial: { scale: 1.3, filter: "blur(10px)" },
+    animate: { scale: 1, filter: "blur(0px)" },
+    transition: { duration: 1.8, ease: "easeOut" },
+  },
+  // Slide 6 – Vertical pan with zoom
+  {
+    initial: { scale: 1.35, y: -50 },
+    animate: { scale: 1, y: 0 },
+    transition: { duration: 2, ease: [0.25, 0.1, 0.25, 1] },
   },
 ];
 
@@ -230,8 +354,12 @@ const Home = () => {
       <section className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
         {/* Single slide – no fade on whole slide, so no flash */}
         <div className="absolute inset-0">
-          {/* Background Image */}
-          <img
+          {/* Background Image with unique animation per slide */}
+          <motion.img
+            key={`img-${current}`}
+            initial={imageVariants[current].initial}
+            animate={imageVariants[current].animate}
+            transition={imageVariants[current].transition}
             src={activeSlide.image}
             alt={activeSlide.title}
             className="w-full h-full object-cover"
