@@ -124,7 +124,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/admin/login/sardarGlobal/bangladesh/trade",
+    path: "/admin",
     element: (
       <div>
         <AdminLogin />
