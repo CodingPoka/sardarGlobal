@@ -13,7 +13,7 @@ import {
   Sparkles,
   Tag,
 } from "lucide-react";
-import pDetails from "../assets/productImage/pDetails.jpg";
+import pDetails from "../productImage/pDetails.jpg";
 
 const ProductDetail = () => {
   const { categoryId, productId } = useParams();
@@ -115,7 +115,7 @@ const ProductDetail = () => {
           alt="Product Details Hero"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        
+
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-950/85 via-blue-900/80 to-blue-950/85"></div>
 
@@ -137,7 +137,9 @@ const ProductDetail = () => {
             </div>
             <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 bg-amber-500/90 rounded-full">
               <Tag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
-              <span className="font-bold text-white text-xs sm:text-sm">{category.name}</span>
+              <span className="font-bold text-white text-xs sm:text-sm">
+                {category.name}
+              </span>
             </div>
           </div>
 

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { db } from "../config/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import productHero from "../assets/productImage/productHero.jpg";
+import productHero from "../productImage/proudcutHero.jpg";
 import {
   Search,
   Package,
