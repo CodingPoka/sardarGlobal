@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { Sparkles, ArrowRight, Star, Loader2, AlertCircle } from "lucide-react";
+import Marquee from "react-fast-marquee";
 
 const TopItems = () => {
   const [topProducts, setTopProducts] = useState([]);
@@ -105,13 +106,13 @@ const TopItems = () => {
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50">
-      {/* Products Grid */}
-      <section className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-12 md:py-16 xl:py-20">
+      {/* Products Marquee */}
+      <section className="max-w-[1920px] mx-auto py-12 md:py-16 xl:py-20">
         {topProducts.length === 0 ? (
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-center bg-white p-12 rounded-3xl shadow-xl"
+            className="text-center bg-white p-12 rounded-3xl shadow-xl mx-4 sm:mx-6 lg:mx-8"
           >
             <Sparkles className="w-20 h-20 text-gray-300 mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-gray-700 mb-2">
@@ -123,143 +124,117 @@ const TopItems = () => {
           </motion.div>
         ) : (
           <>
+            {/* Section Header */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-12 px-4 sm:px-6 lg:px-8"
             >
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full mb-4 sm:mb-6">
+                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+                <span className="text-blue-800 font-bold text-sm sm:text-base lg:text-lg">
+                  Featured Products
+                </span>
+              </div>
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-blue-950 mb-4">
-                Our Top Products
+                Our{" "}
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Top Products
+                </span>
               </h2>
               <p className="text-gray-600 text-base md:text-lg xl:text-xl max-w-3xl mx-auto">
                 Explore our handpicked selection of premium products
               </p>
             </motion.div>
 
-            {/* Slider Container */}
-            <div className="relative max-w-7xl mx-auto overflow-hidden">
-              {/* Slider - Show 3 cards at once */}
-              <div className="relative h-[650px] md:h-[700px] flex items-center justify-center">
-                <div className="relative w-full flex items-center justify-center gap-8">
-                  {getVisibleProducts().map((product, idx) => {
-                    const isCenter = product.position === 0;
-                    const isLeft = product.position === -1;
-                    const isRight = product.position === 1;
-
-                    return (
-                      <motion.div
-                        key={`${product.id}-${currentIndex}`}
-                        initial={false}
-                        animate={{
-                          x: product.position * 520,
-                          scale: isCenter ? 1.05 : 0.8,
-                          opacity: isCenter ? 1 : 0.4,
-                          zIndex: isCenter ? 10 : 1,
-                        }}
-                        transition={{
-                          duration: 1,
-                          ease: [0.25, 0.1, 0.25, 1],
-                        }}
-                        className={`absolute w-[450px] ${
-                          isCenter ? "cursor-pointer" : "pointer-events-none"
-                        }`}
-                        onClick={() => isCenter && handleReadMore(product.id)}
-                      >
-                        <div
-                          className={`bg-white rounded-3xl shadow-2xl overflow-hidden border-2 ${
-                            isCenter
-                              ? "border-blue-300 shadow-blue-200/50 group"
-                              : "border-gray-100"
-                          }`}
-                        >
-                          {/* Product Image */}
-                          <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
-                            {product.imageUrl ? (
-                              <img
-                                src={product.imageUrl}
-                                alt={product.name}
-                                className={`w-full h-full object-cover transition-transform duration-500 ${
-                                  isCenter ? "group-hover:scale-110" : ""
-                                }`}
-                              />
-                            ) : (
-                              <div className="w-full h-full flex items-center justify-center">
-                                <Sparkles className="w-20 h-20 text-gray-300" />
-                              </div>
-                            )}
-
-                            {/* Featured Badge - only on center */}
-                            {isCenter && (
-                              <div className="absolute top-4 right-4">
-                                <div className="bg-amber-500 text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg flex items-center gap-2">
-                                  <Star className="w-4 h-4 fill-white" />
-                                  Featured
-                                </div>
-                              </div>
-                            )}
+            {/* Marquee Carousel */}
+            <div className="overflow-hidden">
+              <Marquee
+                gradient={false}
+                speed={200}
+                pauseOnHover={true}
+                className="py-4"
+                style={{ overflow: "visible" }}
+              >
+                {topProducts.map((product) => (
+                  <div
+                    key={product.id}
+                    className="mx-4 w-[450px] sm:w-[480px] lg:w-[520px]"
+                  >
+                    <div
+                      onClick={() => handleReadMore(product.id)}
+                      className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl overflow-hidden border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 cursor-pointer transform-gpu will-change-transform"
+                    >
+                      {/* Product Image */}
+                      <div className="relative h-80 sm:h-96 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                        {product.imageUrl ? (
+                          <img
+                            src={product.imageUrl}
+                            alt={product.name}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center">
+                            <Sparkles className="w-20 h-20 text-gray-300" />
                           </div>
+                        )}
 
-                          {/* Product Info */}
-                          <div className="p-7">
-                            <h3
-                              className={`text-2xl font-bold mb-3 transition-colors ${
-                                isCenter
-                                  ? "text-blue-950 group-hover:text-blue-600"
-                                  : "text-gray-700"
-                              }`}
-                            >
-                              {product.name}
-                            </h3>
-
-                            {/* Description */}
-                            <p
-                              className={`text-base leading-relaxed mb-5 line-clamp-3 ${
-                                isCenter ? "text-gray-600" : "text-gray-500"
-                              }`}
-                            >
-                              {truncateText(product.description, 120)}
-                            </p>
-
-                            {/* Read More Button - only on center */}
-                            {isCenter && (
-                              <motion.button
-                                whileHover={{ x: 5 }}
-                                whileTap={{ scale: 0.95 }}
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  handleReadMore(product.id);
-                                }}
-                                className="flex items-center gap-2 text-blue-600 font-semibold text-base group-hover:gap-3 transition-all"
-                              >
-                                Read More
-                                <ArrowRight className="w-5 h-5" />
-                              </motion.button>
-                            )}
+                        {/* Featured Badge */}
+                        <div className="absolute top-4 right-4">
+                          <div className="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg flex items-center gap-2">
+                            <Star className="w-4 h-4 fill-white" />
+                            Featured
                           </div>
                         </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </div>
+                      </div>
 
-              {/* Dots Indicator */}
-              <div className="flex justify-center gap-3 mt-8">
-                {topProducts.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentIndex(idx)}
-                    className={`transition-all duration-300 rounded-full ${
-                      idx === currentIndex
-                        ? "w-12 h-3 bg-blue-600"
-                        : "w-3 h-3 bg-gray-300 hover:bg-gray-400"
-                    }`}
-                  />
+                      {/* Product Info */}
+                      <div className="p-6 sm:p-7">
+                        <h3 className="text-xl sm:text-2xl font-bold text-blue-950 group-hover:text-blue-600 transition-colors mb-3 line-clamp-2">
+                          {product.name}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-5 line-clamp-3">
+                          {truncateText(product.description, 120)}
+                        </p>
+
+                        {/* Read More Button */}
+                        <motion.button
+                          whileHover={{ x: 5 }}
+                          whileTap={{ scale: 0.95 }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleReadMore(product.id);
+                          }}
+                          className="flex items-center gap-2 text-blue-600 font-semibold text-base group-hover:gap-3 transition-all"
+                        >
+                          Read More
+                          <ArrowRight className="w-5 h-5" />
+                        </motion.button>
+                      </div>
+
+                      {/* Shine Effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none"></div>
+                    </div>
+                  </div>
                 ))}
-              </div>
+              </Marquee>
             </div>
+
+            {/* Info Text */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-center mt-8 px-4"
+            >
+              <p className="text-gray-500 text-sm sm:text-base">
+                Hover over products to pause • Click to view details
+              </p>
+            </motion.div>
           </>
         )}
       </section>
