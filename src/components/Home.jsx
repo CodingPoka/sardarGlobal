@@ -6,6 +6,10 @@ import slide3 from "../assets/homeImage/slide3.jpeg";
 import slide4 from "../assets/homeImage/slide4.jpg";
 import slide5 from "../assets/homeImage/slide5.jpeg";
 import slide6 from "../assets/homeImage/slide6.png";
+import section1 from "../assets/homeImage/section1.jpg";
+import section2 from "../assets/homeImage/section2.jpg";
+import section5 from "../assets/homeImage/section5.jpg";
+import { Award, TrendingUp, Heart } from "lucide-react";
 
 const slides = [
   {
@@ -410,19 +414,213 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Intro section under hero */}
-      <section className="max-w-6xl mx-auto px-4 py-10 md:py-14">
-        <h2 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4">
-          Trusted Trading Partner in Bangladesh and Beyond
-        </h2>
-        <p className="text-slate-600 leading-relaxed">
-          Sardar Global Trading Co. Ltd. (SGTCL) is a government-registered
-          private limited company established in 2015 under the Companies Act of
-          1994, Bangladesh. We specialize in the supply, import, and indenting
-          of a diverse range of general and technical items for government and
-          semi-government organizations, UN agencies, NGOs, hospitals,
-          educational institutions, and multinational companies.
-        </p>
+      {/* Storytelling Sections */}
+
+      {/* Section 1 - Quality for Trust */}
+      <section className="w-full bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50 py-12 sm:py-16 lg:py-20 xl:py-24">
+        <div className="max-w-[1600px] 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
+            {/* Left - Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6 sm:space-y-8"
+            >
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full border border-blue-200">
+                <Award className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+                <span className="text-blue-800 font-bold text-sm sm:text-base lg:text-lg">
+                  Our Foundation
+                </span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
+                QUALITY.{" "}
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  FOR TRUST.
+                </span>
+              </h2>
+
+              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-blue-600">
+                Consistency that builds long-term partnerships.
+              </p>
+
+              <div className="space-y-4">
+                <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
+                  Since 2015, Sardar Global Trading Co. Ltd. has delivered
+                  products that meet international standards across
+                  humanitarian, industrial, agricultural, and commercial
+                  sectors. We ensure every item — from relief materials to
+                  laboratory equipment — is sourced responsibly, inspected
+                  thoroughly, and delivered reliably.
+                </p>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 italic border-l-4 border-blue-600 pl-4 sm:pl-6">
+                  Quality is not just a requirement.
+                  <br />
+                  It is our promise.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Right - Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src={section1}
+                  alt="Quality for Trust"
+                  className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue-400/20 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-purple-400/20 rounded-full blur-3xl"></div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2 - Supply for Impact */}
+      <section className="w-full bg-white py-12 sm:py-16 lg:py-20 xl:py-24">
+        <div className="max-w-[1600px] 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
+            {/* Left - Image (on desktop) */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative order-2 lg:order-1"
+            >
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src={section2}
+                  alt="Supply for Impact"
+                  className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-green-400/20 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-blue-400/20 rounded-full blur-3xl"></div>
+            </motion.div>
+
+            {/* Right - Content (on desktop) */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6 sm:space-y-8 order-1 lg:order-2"
+            >
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-green-100 to-blue-100 rounded-full border border-green-200">
+                <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
+                <span className="text-green-800 font-bold text-sm sm:text-base lg:text-lg">
+                  Our Mission
+                </span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
+                SUPPLY.{" "}
+                <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                  FOR IMPACT.
+                </span>
+              </h2>
+
+              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-green-600">
+                Delivering essential goods where they matter most.
+              </p>
+
+              <div className="space-y-4">
+                <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
+                  From refugee support operations in Cox's Bazar to NGO and UN
+                  procurement programs, we supply lifesaving materials including
+                  shelter kits, mosquito nets, jerry cans, food and non-food
+                  relief items, and search and rescue equipment.
+                </p>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 italic border-l-4 border-green-600 pl-4 sm:pl-6">
+                  Our supply chain is built to respond fast —<br />
+                  because lives depend on it.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3 - Commitment for Future */}
+      <section className="w-full bg-gradient-to-br from-slate-50 via-purple-50 to-slate-50 py-12 sm:py-16 lg:py-20 xl:py-24">
+        <div className="max-w-[1600px] 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
+            {/* Left - Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6 sm:space-y-8"
+            >
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full border border-purple-200">
+                <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
+                <span className="text-purple-800 font-bold text-sm sm:text-base lg:text-lg">
+                  Our Vision
+                </span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
+                COMMITMENT.{" "}
+                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  FOR FUTURE.
+                </span>
+              </h2>
+
+              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-purple-600">
+                Sustainable, ethical, responsible supply chain.
+              </p>
+
+              <div className="space-y-4">
+                <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
+                  From eco-conscious sourcing to responsible partnerships, SGTCL
+                  is committed to sustainability in every step of our
+                  operations. We work with global manufacturers who follow
+                  environmental standards, and we promote long-term solutions
+                  that respect people, communities, and the planet.
+                </p>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 italic border-l-4 border-purple-600 pl-4 sm:pl-6">
+                  Our work today is an investment in tomorrow.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Right - Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src={section5}
+                  alt="Commitment for Future"
+                  className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-purple-400/20 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-pink-400/20 rounded-full blur-3xl"></div>
+            </motion.div>
+          </div>
+        </div>
       </section>
     </div>
   );
