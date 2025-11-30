@@ -426,7 +426,7 @@ const Clients = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 sm:px-10 sm:py-5 lg:px-12 lg:py-6 bg-transparent border-2 border-white text-white rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base lg:text-lg xl:text-xl hover:bg-white hover:text-blue-600 transition-all"
-                onClick={() => (window.location.href = "/product")}
+                onClick={() => (window.location.href = "/products")}
               >
                 View Our Products
               </motion.button>
