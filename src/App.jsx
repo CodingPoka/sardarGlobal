@@ -19,6 +19,7 @@ import AdminDashboard from "./components/AdminDashboard";
 import AdminTopItems from "./components/AdminTopItems";
 import AdminProduct from "./components/AdminProduct";
 import Footer from "./shared/Footer";
+import AdminFooter from "./components/AdminFooter";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -148,6 +149,7 @@ const router = createBrowserRouter([
       <div>
         <AdminNavbar />
         <AdminDashboard />
+        <AdminFooter />
       </div>
     ),
   },
@@ -157,6 +159,7 @@ const router = createBrowserRouter([
       <div>
         <AdminNavbar />
         <AdminTopItems />
+        <AdminFooter />
       </div>
     ),
   },
@@ -166,6 +169,7 @@ const router = createBrowserRouter([
       <div>
         <AdminNavbar />
         <AdminProduct />
+        <AdminFooter />
       </div>
     ),
   },
