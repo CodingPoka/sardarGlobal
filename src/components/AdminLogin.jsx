@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
+import toast, { Toaster } from "react-hot-toast";
 import logo from "../assets/logo/mainLogo.png";
 
 const AdminLogin = () => {
@@ -30,26 +31,48 @@ const AdminLogin = () => {
     try {
       await signInWithEmailAndPassword(auth, formData.email, formData.password);
 
-      // Success alert
-      alert("Login Successful! Welcome to Admin Dashboard");
+      // Show success toast
+      toast.success("Login Successful!", {
+        duration: 2000,
+        position: "top-center",
+        style: {
+          background: "#10b981",
+          color: "#fff",
+          fontWeight: "bold",
+        },
+      });
 
-      // Navigate to admin dashboard
-      navigate("/admin/AdminDashboard/sardarGlobal/bangladesh/trade");
+      // Navigate to admin dashboard after a short delay
+      setTimeout(() => {
+        navigate("/admin/AdminDashboard/sardarGlobal/bangladesh/trade");
+      }, 500);
     } catch (error) {
       console.error("Login error:", error);
 
-      // Handle different error types
+      // Show error toast
+      let errorMessage = "Incorrect email or password";
+
       if (error.code === "auth/invalid-credential") {
-        setError("Invalid email or password. Please try again.");
+        errorMessage = "Incorrect email or password";
       } else if (error.code === "auth/user-not-found") {
-        setError("No account found with this email.");
+        errorMessage = "Incorrect email or password";
       } else if (error.code === "auth/wrong-password") {
-        setError("Incorrect password. Please try again.");
+        errorMessage = "Incorrect email or password";
       } else if (error.code === "auth/too-many-requests") {
-        setError("Too many failed attempts. Please try again later.");
-      } else {
-        setError("Login failed. Please check your credentials.");
+        errorMessage = "Too many failed attempts. Please try again later.";
       }
+
+      toast.error(errorMessage, {
+        duration: 3000,
+        position: "top-center",
+        style: {
+          background: "#ef4444",
+          color: "#fff",
+          fontWeight: "bold",
+        },
+      });
+
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -57,6 +80,9 @@ const AdminLogin = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-green-50 px-4 py-8">
+      {/* Toast Container */}
+      <Toaster />
+
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
