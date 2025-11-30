@@ -12,7 +12,7 @@ import {
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
-import pDetails from "../productImage/pDetails.jpg";
+import pDetails from "../assets//productImage/pDetails.jpg";
 
 const ProductDetail = () => {
   const { categoryId, productId } = useParams();
