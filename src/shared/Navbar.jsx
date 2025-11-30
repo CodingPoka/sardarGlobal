@@ -6,12 +6,11 @@ const navItems = [
   { name: "Home", to: "/" },
   { name: "Our Products", to: "/products" },
   { name: "About Us", to: "/about" },
-  { name: "Contact Us", to: "/contact" },
   { name: "Client", to: "/clients" },
   { name: "Partner", to: "/partners" },
   { name: "Expertise", to: "/expertise" },
-
   { name: "Certificate", to: "/certificate" },
+  { name: "Contact Us", to: "/contact" },
 ];
 
 const Navbar = () => {
