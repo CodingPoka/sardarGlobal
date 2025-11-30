@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../config/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import toast, { Toaster } from "react-hot-toast";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -30,11 +31,29 @@ const AdminDashboard = () => {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      alert("Logged out successfully!");
-      navigate("/admin/login/sardarGlobal/bangladesh/trade");
+      toast.success("Logged out successfully!", {
+        duration: 2000,
+        position: "top-center",
+        style: {
+          background: "#10b981",
+          color: "#fff",
+          fontWeight: "bold",
+        },
+      });
+      setTimeout(() => {
+        navigate("/admin/login/sardarGlobal/bangladesh/trade");
+      }, 500);
     } catch (error) {
       console.error("Logout error:", error);
-      alert("Error logging out. Please try again.");
+      toast.error("Error logging out. Please try again.", {
+        duration: 3000,
+        position: "top-center",
+        style: {
+          background: "#ef4444",
+          color: "#fff",
+          fontWeight: "bold",
+        },
+      });
     }
   };
 
@@ -142,6 +161,9 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+      {/* Toast Container */}
+      <Toaster />
+
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100">
