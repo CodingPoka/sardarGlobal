@@ -352,24 +352,33 @@ const Home = () => {
     <div className="w-full min-h-screen bg-slate-50">
       {/* Hero Slider */}
       <section className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
-        {/* Single slide – no fade on whole slide, so no flash */}
+        {/* Background Images - all rendered with crossfade */}
         <div className="absolute inset-0">
-          {/* Background Image with unique animation per slide */}
-          <motion.img
-            key={`img-${current}`}
-            initial={imageVariants[current].initial}
-            animate={imageVariants[current].animate}
-            transition={imageVariants[current].transition}
-            src={activeSlide.image}
-            alt={activeSlide.title}
-            className="w-full h-full object-cover"
-          />
+          {slides.map((slide, index) => (
+            <motion.img
+              key={`img-${index}`}
+              initial={imageVariants[index].initial}
+              animate={
+                current === index
+                  ? imageVariants[index].animate
+                  : imageVariants[index].initial
+              }
+              transition={imageVariants[index].transition}
+              src={slide.image}
+              alt={slide.title}
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{
+                opacity: current === index ? 1 : 0,
+                transition: "opacity 0.8s ease-in-out",
+              }}
+            />
+          ))}
 
           {/* Dark gradient overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/55 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/55 to-black/30 z-10" />
 
           {/* Text content */}
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center z-20">
             <div className="max-w-4xl px-4 text-center">
               <AnimatedTitle
                 text={activeSlide.title}
