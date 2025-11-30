@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { db } from "../config/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import productHero from "../assets/productImage/productHero.jpg";
 import {
   Search,
   Package,
@@ -157,43 +158,51 @@ const Product = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       {/* Hero Banner */}
-      <section className="relative w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30"></div>
+      <section className="relative w-full h-[300px] md:h-[350px] lg:h-[400px] overflow-hidden">
+        {/* Background Image */}
+        <motion.img
+          initial={{ scale: 1.2 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5 }}
+          src={productHero}
+          alt="Our Products"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/85 via-blue-900/80 to-blue-950/85"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-12 sm:py-16 lg:py-20 xl:py-24 2xl:py-28">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 h-full flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/20 backdrop-blur-sm rounded-full mb-4 sm:mb-6 border border-white/30">
-              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300" />
-              <span className="text-white font-medium text-sm sm:text-base">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-amber-500/20 backdrop-blur-sm rounded-full mb-3 sm:mb-4 border border-amber-400/30">
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
+              <span className="text-amber-300 font-semibold text-sm sm:text-base">
                 Our Products
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 leading-tight drop-shadow-lg">
               Explore Our Product Range
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-blue-100 max-w-4xl mx-auto mb-6 sm:mb-8 lg:mb-10 leading-relaxed px-4">
-              Discover premium quality products tailored to your needs. Browse
-              through our extensive catalog and find exactly what you're looking
-              for.
+            <p className="text-base sm:text-lg md:text-xl text-blue-100 max-w-3xl mx-auto mb-5 sm:mb-6 leading-relaxed px-4">
+              Discover premium quality products tailored to your needs
             </p>
 
-            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3">
               <button
                 onClick={() => setSelectedCategory("all")}
-                className="flex items-center justify-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 lg:px-8 lg:py-4 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-all shadow-lg font-semibold text-sm sm:text-base lg:text-lg"
+                className="flex items-center justify-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-white text-blue-600 rounded-full hover:bg-blue-50 transition-all shadow-lg font-semibold text-sm sm:text-base"
               >
                 <Grid className="w-4 h-4 sm:w-5 sm:h-5" />
                 View All Products
               </button>
               <button
                 onClick={handleContactUs}
-                className="flex items-center justify-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 lg:px-8 lg:py-4 bg-blue-500 text-white rounded-lg hover:bg-blue-400 transition-all border-2 border-white/30 font-semibold text-sm sm:text-base lg:text-lg"
+                className="flex items-center justify-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition-all shadow-lg font-semibold text-sm sm:text-base"
               >
                 <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
                 Contact Us

@@ -13,6 +13,7 @@ import {
   Sparkles,
   Tag,
 } from "lucide-react";
+import pDetails from "../assets/productImage/pDetails.jpg";
 
 const ProductDetail = () => {
   const { categoryId, productId } = useParams();
@@ -104,31 +105,48 @@ const ProductDetail = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       {/* Header with Back Button */}
-      <section className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 py-6 sm:py-8 lg:py-10 xl:py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
+      <section className="relative w-full h-[300px] md:h-[350px] lg:h-[400px] overflow-hidden">
+        {/* Background Image with Ken Burns Effect */}
+        <motion.img
+          initial={{ scale: 1.2 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          src={pDetails}
+          alt="Product Details Hero"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/85 via-blue-900/80 to-blue-950/85"></div>
+
+        {/* Content */}
+        <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 flex flex-col justify-center">
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-white hover:text-blue-200 transition-colors mb-4 sm:mb-6 group"
+            className="flex items-center gap-2 text-white hover:text-amber-300 transition-colors mb-4 sm:mb-5 group"
           >
             <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-translate-x-1 transition-transform" />
-            <span className="font-semibold text-sm sm:text-base lg:text-lg">
+            <span className="font-semibold text-sm sm:text-base">
               Back to Products
             </span>
           </button>
 
-          <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-            <div className="p-2 sm:p-3 bg-white/20 backdrop-blur-sm rounded-lg">
-              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-yellow-300" />
+          <div className="flex items-center gap-2 sm:gap-3 mb-3">
+            <div className="p-2 sm:p-2.5 bg-amber-500/20 backdrop-blur-sm rounded-lg border border-amber-400/30">
+              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" />
             </div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white">
-              Product Details
-            </h1>
+            <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 bg-amber-500/90 rounded-full">
+              <Tag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+              <span className="font-bold text-white text-xs sm:text-sm">{category.name}</span>
+            </div>
           </div>
 
-          <div className="flex items-center gap-2 text-blue-100 text-sm sm:text-base lg:text-lg">
-            <Tag className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="font-medium">{category.name}</span>
-          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
+            Product Details
+          </h1>
+          <p className="text-blue-100 text-sm sm:text-base max-w-2xl">
+            Explore comprehensive information about this quality product
+          </p>
         </div>
       </section>
 
