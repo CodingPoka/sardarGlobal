@@ -2,16 +2,15 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useParams, useNavigate } from "react-router-dom";
 import { db } from "../config/firebase";
-import { doc, getDoc, collection, getDocs } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import {
   ArrowLeft,
-  ArrowRight,
   Package,
-  Grid,
-  MessageSquare,
+  Tag,
+  Loader2,
+  AlertCircle,
   CheckCircle2,
   Sparkles,
-  Tag,
 } from "lucide-react";
 import pDetails from "../productImage/pDetails.jpg";
 
@@ -50,31 +49,12 @@ const ProductDetail = () => {
     }
   };
 
-  const handleContactUs = () => {
-    navigate("/contact#contact-form");
-    setTimeout(() => {
-      const element = document.getElementById("contact-form");
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }, 100);
-  };
-
-  const handleViewAllProducts = () => {
-    navigate("/product");
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 100);
-  };
-
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 font-medium text-lg">
-            Loading product details...
-          </p>
+          <Loader2 className="w-16 h-16 text-blue-600 animate-spin mx-auto mb-4" />
+          <p className="text-gray-600 text-lg">Loading product details...</p>
         </div>
       </div>
     );
@@ -82,20 +62,20 @@ const ProductDetail = () => {
 
   if (!product || !category) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 flex items-center justify-center p-4">
-        <div className="text-center max-w-md">
-          <Package className="w-20 h-20 text-gray-400 mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50 flex items-center justify-center">
+        <div className="text-center bg-white p-8 rounded-3xl shadow-xl max-w-md">
+          <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-red-600 mb-2">
             Product Not Found
           </h2>
           <p className="text-gray-600 mb-6">
             The product you're looking for doesn't exist.
           </p>
           <button
-            onClick={handleViewAllProducts}
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+            onClick={() => navigate("/products")}
+            className="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors"
           >
-            View All Products
+            Back to Products
           </button>
         </div>
       </div>
@@ -103,8 +83,8 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
-      {/* Header with Back Button */}
+    <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50">
+      {/* Hero Banner */}
       <section className="relative w-full h-[300px] md:h-[350px] lg:h-[400px] overflow-hidden">
         {/* Background Image with Ken Burns Effect */}
         <motion.img
@@ -122,7 +102,7 @@ const ProductDetail = () => {
         {/* Content */}
         <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 flex flex-col justify-center">
           <button
-            onClick={() => navigate(-1)}
+            onClick={() => navigate("/products")}
             className="flex items-center gap-2 text-white hover:text-amber-300 transition-colors mb-4 sm:mb-5 group"
           >
             <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-translate-x-1 transition-transform" />
@@ -135,12 +115,14 @@ const ProductDetail = () => {
             <div className="p-2 sm:p-2.5 bg-amber-500/20 backdrop-blur-sm rounded-lg border border-amber-400/30">
               <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" />
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 bg-amber-500/90 rounded-full">
-              <Tag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
-              <span className="font-bold text-white text-xs sm:text-sm">
-                {category.name}
-              </span>
-            </div>
+            {category && (
+              <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 bg-amber-500/90 rounded-full">
+                <Tag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+                <span className="font-bold text-white text-xs sm:text-sm">
+                  {category.name}
+                </span>
+              </div>
+            )}
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
@@ -152,159 +134,165 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Product Detail Content */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-8 sm:py-12 lg:py-16 xl:py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl lg:rounded-3xl shadow-2xl overflow-hidden border border-gray-100"
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-            {/* Product Image */}
-            <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 aspect-square lg:aspect-auto lg:min-h-[500px] xl:min-h-[600px] 2xl:min-h-[700px]">
-              {product.imageUrl ? (
-                <img
-                  src={product.imageUrl}
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center">
-                  <Package className="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 text-gray-400" />
+      {/* Product Detail Section */}
+      <section className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-8 md:py-12 xl:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 xl:gap-16">
+          {/* Left - Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="sticky top-8">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-gradient-to-br from-gray-100 to-gray-200">
+                {product.imageUrl ? (
+                  <img
+                    src={product.imageUrl}
+                    alt={product.name}
+                    className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-contain p-8"
+                  />
+                ) : (
+                  <div className="w-full h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center">
+                    <Package className="w-32 h-32 text-gray-300" />
+                  </div>
+                )}
+
+                {/* Category Badge */}
+                {category && (
+                  <div className="absolute top-6 right-6">
+                    <div className="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-full font-bold text-lg shadow-2xl flex items-center gap-2">
+                      <Sparkles className="w-6 h-6" />
+                      {category.name}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Decorative elements */}
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-400/20 rounded-full blur-3xl" />
+              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-purple-400/20 rounded-full blur-3xl" />
+            </div>
+          </motion.div>
+
+          {/* Right - Details */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6"
+          >
+            {/* Category Badge */}
+            {category && (
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.3, type: "spring" }}
+                className="inline-block"
+              >
+                <div className="flex items-center gap-2 bg-amber-100 px-4 py-2 rounded-full">
+                  <Tag className="w-5 h-5 text-amber-600" />
+                  <span className="text-amber-700 font-semibold">
+                    {category.name}
+                  </span>
                 </div>
+              </motion.div>
+            )}
+
+            {/* Product Name */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="text-4xl md:text-5xl xl:text-6xl font-bold text-blue-950 leading-tight"
+            >
+              {product.name}
+            </motion.h1>
+
+            {/* Description */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="bg-white rounded-3xl p-8 shadow-xl border-2 border-gray-100"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-blue-950 mb-4 flex items-center gap-2">
+                <Package className="w-8 h-8 text-blue-600" />
+                Product Description
+              </h2>
+              <div className="prose prose-lg max-w-none">
+                <p className="text-gray-700 text-base md:text-lg xl:text-xl leading-relaxed whitespace-pre-wrap">
+                  {product.description ||
+                    "No description available for this product."}
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Features (if available) */}
+            {product.features &&
+              Array.isArray(product.features) &&
+              product.features.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 }}
+                  className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 border-2 border-blue-100"
+                >
+                  <h2 className="text-2xl md:text-3xl font-bold text-blue-950 mb-6">
+                    Key Features
+                  </h2>
+                  <ul className="space-y-3">
+                    {product.features.map((feature, idx) => (
+                      <motion.li
+                        key={idx}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.8 + idx * 0.1 }}
+                        className="flex items-start gap-3"
+                      >
+                        <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                        <span className="text-gray-700 text-base md:text-lg">
+                          {feature}
+                        </span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
               )}
 
-              {/* Category Badge */}
-              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 lg:top-8 lg:right-8 px-4 py-2 sm:px-5 sm:py-2.5 bg-blue-600 text-white rounded-full text-xs sm:text-sm lg:text-base font-bold shadow-lg">
-                {category.name}
-              </div>
-
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-            </div>
-
-            {/* Product Information */}
-            <div className="p-6 sm:p-8 lg:p-10 xl:p-12 2xl:p-16 flex flex-col">
-              <div className="flex-1">
-                {/* Product Name */}
-                <div className="mb-4 sm:mb-6 lg:mb-8">
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4">
-                    {product.name}
-                  </h2>
-                  <div className="h-1 w-20 sm:w-24 lg:w-32 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full"></div>
-                </div>
-
-                {/* Category Info */}
-                <div className="mb-6 sm:mb-8 lg:mb-10">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 bg-blue-50 rounded-lg border border-blue-200">
-                    <Tag className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
-                    <span className="text-sm sm:text-base lg:text-lg font-semibold text-blue-700">
-                      Category: {category.name}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Product Description */}
-                <div className="mb-8 sm:mb-10 lg:mb-12">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                    Product Description
-                  </h3>
-                  <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none">
-                    <p className="text-gray-700 leading-relaxed text-sm sm:text-base lg:text-lg xl:text-xl whitespace-pre-wrap">
-                      {product.description ||
-                        "No description available for this product."}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Features/Highlights (if available) */}
-                {product.features &&
-                  Array.isArray(product.features) &&
-                  product.features.length > 0 && (
-                    <div className="mb-8 sm:mb-10 lg:mb-12">
-                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">
-                        Key Features
-                      </h3>
-                      <ul className="space-y-2 sm:space-y-3">
-                        {product.features.map((feature, index) => (
-                          <li
-                            key={index}
-                            className="flex items-start gap-2 sm:gap-3"
-                          >
-                            <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0 mt-1" />
-                            <span className="text-gray-700 text-sm sm:text-base lg:text-lg">
-                              {feature}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6 sm:pt-8 border-t border-gray-200">
-                <button
-                  onClick={handleContactUs}
-                  className="flex-1 flex items-center justify-center gap-2 sm:gap-3 px-6 py-3 sm:px-8 sm:py-4 lg:px-10 lg:py-5 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all shadow-lg font-bold text-sm sm:text-base lg:text-lg group"
+            {/* Contact CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 }}
+              className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 rounded-3xl p-8 text-center shadow-2xl"
+            >
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Interested in This Product?
+              </h3>
+              <p className="text-blue-200 mb-6">
+                Contact us for more information and pricing
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => navigate("/contact")}
+                  className="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-all"
                 >
-                  <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6" />
-                  Send Us a Message
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-
-                <button
-                  onClick={handleViewAllProducts}
-                  className="flex-1 flex items-center justify-center gap-2 sm:gap-3 px-6 py-3 sm:px-8 sm:py-4 lg:px-10 lg:py-5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg font-bold text-sm sm:text-base lg:text-lg group"
+                  Contact Us Now
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => navigate("/products")}
+                  className="bg-white text-blue-900 px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-all border-2 border-white hover:bg-gray-50"
                 >
-                  <Grid className="w-5 h-5 sm:w-6 sm:h-6" />
-                  Visit All Products
-                </button>
+                  Browse All Products
+                </motion.button>
               </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Additional CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-8 sm:mt-12 lg:mt-16 xl:mt-20 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 rounded-2xl lg:rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-12 xl:p-16 text-center border border-blue-500"
-        >
-          <div className="max-w-3xl mx-auto">
-            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white/20 backdrop-blur-sm rounded-full mb-4 sm:mb-6 lg:mb-8">
-              <Package className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-white" />
-            </div>
-
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-3 sm:mb-4 lg:mb-6">
-              Interested in This Product?
-            </h2>
-            <p className="text-blue-100 text-sm sm:text-base lg:text-lg xl:text-xl mb-6 sm:mb-8 lg:mb-10 max-w-2xl mx-auto leading-relaxed">
-              Contact us today to learn more about this product, request a
-              quote, or place an order. Our team is ready to assist you!
-            </p>
-
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 lg:gap-6">
-              <button
-                onClick={handleContactUs}
-                className="flex items-center justify-center gap-2 sm:gap-3 px-6 py-3 sm:px-8 sm:py-4 lg:px-10 lg:py-5 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-all shadow-lg font-bold text-sm sm:text-base lg:text-lg"
-              >
-                <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6" />
-                Contact Us Now
-              </button>
-              <button
-                onClick={handleViewAllProducts}
-                className="flex items-center justify-center gap-2 sm:gap-3 px-6 py-3 sm:px-8 sm:py-4 lg:px-10 lg:py-5 bg-blue-500 text-white rounded-lg hover:bg-blue-400 transition-all border-2 border-white/30 font-bold text-sm sm:text-base lg:text-lg"
-              >
-                <Grid className="w-5 h-5 sm:w-6 sm:h-6" />
-                Browse More Products
-              </button>
-            </div>
-          </div>
-        </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
       </section>
     </div>
   );

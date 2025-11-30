@@ -105,7 +105,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "expertise",
+    path: "/expertise",
     element: (
       <div>
         <Navbar />
