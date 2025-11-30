@@ -12,6 +12,7 @@ import Partners from "./components/Partners";
 import Expertise from "./components/Expertise";
 import TopItems from "./components/TopItems";
 import TopItemDetail from "./components/TopItemDetail";
+import ProductDetail from "./components/ProductDetail";
 import AdminNavbar from "./components/AdminNavbar";
 import AdminLogin from "./components/AdminLogin";
 import AdminDashboard from "./components/AdminDashboard";
@@ -38,6 +39,16 @@ const router = createBrowserRouter([
       <div>
         <Navbar />
         <Product />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/product/:categoryId/:productId",
+    element: (
+      <div>
+        <Navbar />
+        <ProductDetail />
         <Footer />
       </div>
     ),
