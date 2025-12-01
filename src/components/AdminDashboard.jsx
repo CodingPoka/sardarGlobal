@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../config/firebase";
+import { auth, db } from "../config/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import { collection, getDocs } from "firebase/firestore";
 import toast, { Toaster } from "react-hot-toast";
 
 const AdminDashboard = () => {
@@ -9,16 +10,16 @@ const AdminDashboard = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState({
-    totalProducts: 145,
-    totalClients: 89,
-    totalOrders: 234,
-    revenue: "৳2,450,000",
+    totalProducts: 0,
+    totalCategories: 0,
+    totalTopItems: 0,
   });
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
+        fetchStats(); // Fetch stats when user is authenticated
       } else {
         navigate("/admin/login/sardarGlobal/bangladesh/trade");
       }
@@ -27,6 +28,39 @@ const AdminDashboard = () => {
 
     return () => unsubscribe();
   }, [navigate]);
+
+  const fetchStats = async () => {
+    try {
+      // Fetch total categories
+      const categoriesSnapshot = await getDocs(collection(db, "categories"));
+      const totalCategories = categoriesSnapshot.size;
+
+      // Fetch total products across all categories
+      let totalProducts = 0;
+      for (const categoryDoc of categoriesSnapshot.docs) {
+        const productsSnapshot = await getDocs(
+          collection(db, "categories", categoryDoc.id, "products")
+        );
+        totalProducts += productsSnapshot.size;
+      }
+
+      // Fetch total top items
+      const topItemsSnapshot = await getDocs(collection(db, "topItems"));
+      const totalTopItems = topItemsSnapshot.size;
+
+      setStats({
+        totalProducts,
+        totalCategories,
+        totalTopItems,
+      });
+    } catch (error) {
+      console.error("Error fetching stats:", error);
+      toast.error("Failed to load statistics", {
+        duration: 3000,
+        position: "top-center",
+      });
+    }
+  };
 
   const handleLogout = async () => {
     try {
@@ -202,31 +236,28 @@ const AdminDashboard = () => {
         </div>
 
         {/* Statistics Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {[
             {
               label: "Total Products",
               value: stats.totalProducts,
               icon: "📦",
               color: "blue",
+              gradient: "from-blue-500 to-blue-600",
             },
             {
-              label: "Total Clients",
-              value: stats.totalClients,
-              icon: "👥",
+              label: "Total Categories",
+              value: stats.totalCategories,
+              icon: "📁",
               color: "green",
+              gradient: "from-green-500 to-green-600",
             },
             {
-              label: "Total Orders",
-              value: stats.totalOrders,
-              icon: "🛒",
-              color: "purple",
-            },
-            {
-              label: "Revenue",
-              value: stats.revenue,
-              icon: "💰",
+              label: "Total Top Items",
+              value: stats.totalTopItems,
+              icon: "⭐",
               color: "yellow",
+              gradient: "from-yellow-500 to-orange-600",
             },
           ].map((stat, index) => (
             <div
@@ -234,13 +265,10 @@ const AdminDashboard = () => {
               className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="flex items-center justify-between mb-4">
-                <div className={`text-4xl p-3 bg-${stat.color}-50 rounded-lg`}>
-                  {stat.icon}
-                </div>
                 <div
-                  className={`text-${stat.color}-600 text-sm font-semibold px-3 py-1 bg-${stat.color}-50 rounded-full`}
+                  className={`text-4xl p-3 bg-gradient-to-r ${stat.gradient} rounded-lg shadow-md`}
                 >
-                  +12%
+                  {stat.icon}
                 </div>
               </div>
               <h3 className="text-gray-600 text-sm font-medium mb-1">
