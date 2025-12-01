@@ -20,11 +20,13 @@ import AdminTopItems from "./components/AdminTopItems";
 import AdminProduct from "./components/AdminProduct";
 import Footer from "./shared/Footer";
 import AdminFooter from "./components/AdminFooter";
+import ScrollToTop from "./components/ScrollToTop";
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <div>
+        <ScrollToTop />
         <Navbar />
         <Home />
         <TopItems />
@@ -38,6 +40,7 @@ const router = createBrowserRouter([
     path: "/products",
     element: (
       <div>
+        <ScrollToTop />
         <Navbar />
         <Product />
         <Footer />
@@ -48,6 +51,7 @@ const router = createBrowserRouter([
     path: "/product/:categoryId/:productId",
     element: (
       <div>
+        <ScrollToTop />
         <Navbar />
         <ProductDetail />
         <Footer />
@@ -58,6 +62,7 @@ const router = createBrowserRouter([
     path: "/clients",
     element: (
       <div>
+        <ScrollToTop />
         <Navbar />
         <Client />
         <Footer />
@@ -68,6 +73,7 @@ const router = createBrowserRouter([
     path: "/contact",
     element: (
       <div>
+        <ScrollToTop />
         <Navbar />
         <Contact />
         <Footer />
@@ -79,6 +85,7 @@ const router = createBrowserRouter([
     path: "/about",
     element: (
       <div>
+        <ScrollToTop />
         <Navbar />
         <About />
         <Footer />
@@ -89,6 +96,7 @@ const router = createBrowserRouter([
     path: "/certificate",
     element: (
       <div>
+        <ScrollToTop />
         <Navbar />
         <Certificate />
         <Footer />
@@ -99,6 +107,7 @@ const router = createBrowserRouter([
     path: "/partners",
     element: (
       <div>
+        <ScrollToTop />
         <Navbar />
         <Partners />
         <Footer />
@@ -109,6 +118,7 @@ const router = createBrowserRouter([
     path: "/expertise",
     element: (
       <div>
+        <ScrollToTop />
         <Navbar />
         <Expertise />
         <Footer />
@@ -119,6 +129,7 @@ const router = createBrowserRouter([
     path: "/top-items",
     element: (
       <div>
+        <ScrollToTop />
         <Navbar />
         <TopItems />
         <Footer />
@@ -129,6 +140,7 @@ const router = createBrowserRouter([
     path: "/top-items/:id",
     element: (
       <div>
+        <ScrollToTop />
         <Navbar />
         <TopItemDetail />
         <Footer />
@@ -139,6 +151,7 @@ const router = createBrowserRouter([
     path: "/admin/login/sardarGlobal/bangladesh/trade",
     element: (
       <div>
+        <ScrollToTop />
         <AdminLogin />
       </div>
     ),
@@ -147,6 +160,7 @@ const router = createBrowserRouter([
     path: "/admin/AdminDashboard/sardarGlobal/bangladesh/trade",
     element: (
       <div>
+        <ScrollToTop />
         <AdminNavbar />
         <AdminDashboard />
         <AdminFooter />
@@ -157,6 +171,7 @@ const router = createBrowserRouter([
     path: "/admin/AdminTopItems/sardarGlobal/bangladesh/trade",
     element: (
       <div>
+        <ScrollToTop />
         <AdminNavbar />
         <AdminTopItems />
         <AdminFooter />
@@ -167,6 +182,7 @@ const router = createBrowserRouter([
     path: "/admin/AdminProduct/sardarGlobal/bangladesh/trade",
     element: (
       <div>
+        <ScrollToTop />
         <AdminNavbar />
         <AdminProduct />
         <AdminFooter />
