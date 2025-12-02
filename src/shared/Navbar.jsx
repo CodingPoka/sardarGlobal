@@ -4,12 +4,12 @@ import mainLogo from "../assets/logo/mainLogo.png";
 
 const navItems = [
   { name: "Home", to: "/" },
-  { name: "Our Products", to: "/products" },
-  { name: "About Us", to: "/about" },
+  { name: "Products", to: "/products" },
   { name: "Client", to: "/clients" },
   { name: "Partner", to: "/partners" },
   { name: "Expertise", to: "/expertise" },
   { name: "Certificate", to: "/certificate" },
+  { name: "About Us", to: "/about" },
   { name: "Contact Us", to: "/contact" },
 ];
 
