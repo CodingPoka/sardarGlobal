@@ -35,7 +35,7 @@ const Navbar = () => {
               />
               <div className="hidden sm:flex flex-col">
                 <span className="text-base md:text-lg xl:text-xl font-semibold text-white tracking-tight">
-                  Sardar Global Trading Co. Ltd
+                  Sardar Global Trading Co. Ltd ds
                 </span>
                 <span className="text-xs md:text-sm text-amber-400 font-light italic tracking-wide">
                   ---------- Your Personal Trading Company
