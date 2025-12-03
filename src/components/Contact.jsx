@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
 import {
   MapPin,
   Phone,
@@ -14,17 +16,93 @@ import {
   MessageSquare,
   HeadphonesIcon,
   CheckCircle2,
+  Loader2,
 } from "lucide-react";
 import contactImage from "../assets/contactImage/contact4.jpg";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    title: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Thank you for reaching out! We will get back to you soon.");
+    setLoading(true);
+
+    // EmailJS configuration
+    const serviceID = "service_n118dzo";
+    const templateID = "template_xd9m48w";
+    const publicKey = "0GUCw_ceUNwAdaCQy";
+
+    // Prepare template parameters - must match EmailJS template variables exactly
+    const templateParams = {
+      name: formData.name, // matches {{name}}
+      email: formData.email, // matches {{email}}
+      title: formData.title, // matches {{title}}
+      message: formData.message, // matches {{message}}
+    };
+
+    console.log("Sending with params:", templateParams); // Debug log
+
+    // Send email using EmailJS (v3+ syntax)
+    emailjs.send(serviceID, templateID, templateParams, publicKey).then(
+      (response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        toast.success(
+          "Thank you! Your message has been sent successfully. We'll get back to you soon.",
+          {
+            duration: 4000,
+            position: "top-center",
+            style: {
+              background: "#10b981",
+              color: "#fff",
+              fontWeight: "500",
+            },
+          }
+        );
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          title: "",
+          message: "",
+        });
+        setLoading(false);
+      },
+      (error) => {
+        console.error("FAILED...", error);
+        console.error("Error details:", error.text); // More detailed error
+        toast.error(
+          "Oops! Something went wrong. Please try again or contact us directly.",
+          {
+            duration: 4000,
+            position: "top-center",
+            style: {
+              background: "#ef4444",
+              color: "#fff",
+              fontWeight: "500",
+            },
+          }
+        );
+        setLoading(false);
+      }
+    );
   };
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50">
+      <Toaster />
       {/* Banner */}
       <section className="relative w-full h-[300px] md:h-[380px] lg:h-[480px] xl:h-[550px] overflow-hidden">
         <img
@@ -167,8 +245,12 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     required
-                    className="w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 xl:py-4 text-sm md:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                    disabled={loading}
+                    className="w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 xl:py-4 text-sm md:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -179,8 +261,12 @@ const Contact = () => {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     required
-                    className="w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 xl:py-4 text-sm md:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                    disabled={loading}
+                    className="w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 xl:py-4 text-sm md:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -191,8 +277,12 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
+                    name="title"
+                    value={formData.title}
+                    onChange={handleChange}
                     required
-                    className="w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 xl:py-4 text-sm md:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                    disabled={loading}
+                    className="w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 xl:py-4 text-sm md:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
                     placeholder="Subject of your inquiry"
                   />
                 </div>
@@ -203,15 +293,32 @@ const Contact = () => {
                   </label>
                   <textarea
                     rows={6}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     required
-                    className="w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 xl:py-4 text-sm md:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all resize-none"
+                    disabled={loading}
+                    className="w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 xl:py-4 text-sm md:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
                     placeholder="Write your message here..."
                   />
                 </div>
 
-                <button className="bg-gradient-to-r from-blue-900 to-blue-700 text-white px-8 py-3 xl:px-10 xl:py-4 rounded-lg text-sm md:text-base xl:text-lg font-bold hover:from-blue-800 hover:to-blue-600 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto flex items-center justify-center gap-2 group">
-                  <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  Send Message
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="bg-gradient-to-r from-blue-900 to-blue-700 text-white px-8 py-3 xl:px-10 xl:py-4 rounded-lg text-sm md:text-base xl:text-lg font-bold hover:from-blue-800 hover:to-blue-600 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {loading ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </div>

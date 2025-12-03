@@ -31,6 +31,7 @@ const router = createBrowserRouter([
         <Home />
         <TopItems />
         <Certificate />
+        <About />
         <Contact />
         <Footer />
       </div>
