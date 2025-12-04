@@ -30,7 +30,6 @@ const router = createBrowserRouter([
         <Navbar />
         <Home />
         <TopItems />
-        <Certificate />
         <About />
         <Contact />
         <Footer />
