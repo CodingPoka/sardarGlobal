@@ -6,9 +6,9 @@ const navItems = [
   { name: "Home", to: "/" },
   { name: "Products", to: "/products" },
   { name: "Client", to: "/clients" },
-  { name: "Partner", to: "/partners" },
+  // { name: "Partner", to: "/partners" },
   { name: "Expertise", to: "/expertise" },
-  { name: "Certificate", to: "/certificate" },
+  // { name: "Certificate", to: "/certificate" },
   { name: "About Us", to: "/about" },
   { name: "Contact Us", to: "/contact" },
 ];
@@ -31,7 +31,7 @@ const Navbar = () => {
               <img
                 src={mainLogo}
                 alt="Company Logo"
-                className="h-16 md:h-20 lg:h-24 xl:h-28 w-auto object-contain"
+                className="h-14 md:h-16 lg:h-20 xl:h-24 w-auto object-contain"
               />
               <div className="hidden sm:flex flex-col">
                 <span className="text-base md:text-lg xl:text-xl font-semibold text-white tracking-tight">
