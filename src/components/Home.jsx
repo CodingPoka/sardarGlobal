@@ -62,7 +62,7 @@ const titleContainerVariants = [
       opacity: 1,
       transition: {
         staggerChildren: 0.06,
-        delayChildren: 0.05,
+        delayChildren: 0.06,
       },
     },
   },
@@ -73,7 +73,7 @@ const titleContainerVariants = [
       opacity: 1,
       transition: {
         staggerChildren: 0.05,
-        delayChildren: 0.03,
+        delayChildren: 0.05,
       },
     },
   },
@@ -83,8 +83,8 @@ const titleContainerVariants = [
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.07,
-        delayChildren: 0.05,
+        staggerChildren: 0.06,
+        delayChildren: 0.06,
       },
     },
   },
@@ -95,7 +95,7 @@ const titleContainerVariants = [
       opacity: 1,
       transition: {
         staggerChildren: 0.06,
-        delayChildren: 0.05,
+        delayChildren: 0.06,
       },
     },
   },
@@ -105,8 +105,8 @@ const titleContainerVariants = [
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.04,
-        delayChildren: 0.02,
+        staggerChildren: 0.05,
+        delayChildren: 0.05,
       },
     },
   },
@@ -117,7 +117,7 @@ const titleContainerVariants = [
       opacity: 1,
       transition: {
         staggerChildren: 0.05,
-        delayChildren: 0.03,
+        delayChildren: 0.05,
       },
     },
   },
@@ -133,7 +133,7 @@ const wordVariants = [
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] },
     },
   },
   // Slide 2 – slide from left
@@ -142,7 +142,7 @@ const wordVariants = [
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.45, ease: "easeOut" },
+      transition: { duration: 0.4, ease: "easeOut" },
     },
   },
   // Slide 3 – zoom in
@@ -345,11 +345,11 @@ const AnimatedSubtitle = ({ text, slideIndex, current }) => (
 const Home = () => {
   const [current, setCurrent] = useState(0);
 
-  // Auto change slide (3.5s, no flash)
+  // Auto change slide (3.5s)
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 2000);
+    }, 3500);
 
     return () => clearInterval(interval);
   }, []);
