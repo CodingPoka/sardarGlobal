@@ -150,7 +150,7 @@ const Contact = () => {
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-5 py-3">
                 <Mail className="w-5 h-5 text-amber-400" />
                 <span className="text-white font-medium text-sm md:text-base">
-                  info@sgtcl.com
+                  info@sardarglobal.net
                 </span>
               </div>
             </div>
@@ -346,9 +346,13 @@ const Contact = () => {
                       Registered Address
                     </span>
                     <br />
-                    70, Bir Uttam CR Dutta Road,
+                    Sardar Global Trading Co. Ltd.
                     <br />
-                    Eastern Plaza Complex, Hatirpool, Dhaka 1205
+                    70, Bir Uttam CR Dutta Road, 7/37-B,
+                    <br />
+                    Eastern Plaza Commercial Complex,
+                    <br />
+                    Hatirpool, Dhaka – 1205, Bangladesh
                   </p>
                 </div>
 
@@ -359,9 +363,11 @@ const Contact = () => {
                       Corporate Address
                     </span>
                     <br />
-                    House # 11, Road # 4,
+                    Sardar Global Trading Co. Ltd.
                     <br />
-                    Dhanmondi R/A, Dhaka 1205
+                    House # 11, Road # 4
+                    <br />
+                    Dhanmondi R/A, Dhaka 1205, Bangladesh
                   </p>
                 </div>
 
@@ -386,22 +392,22 @@ const Contact = () => {
                 <div className="flex gap-4 items-center">
                   <Mail className="w-6 h-6 sm:w-6 sm:h-6 xl:w-7 xl:h-7 text-blue-600 flex-shrink-0" />
                   <a
-                    href="mailto:info@sgtcl.com"
+                    href="mailto:info@sardarglobal.net"
                     className="text-blue-700 font-medium underline hover:text-blue-900"
                   >
-                    info@sgtcl.com
+                    info@sardarglobal.net
                   </a>
                 </div>
 
                 <div className="flex gap-4 items-center">
                   <Globe className="w-6 h-6 sm:w-6 sm:h-6 xl:w-7 xl:h-7 text-indigo-600 flex-shrink-0" />
                   <a
-                    href="https://www.dotbd.com"
+                    href="https://www.sardarglobal.net"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-purple-600 underline hover:text-purple-800"
                   >
-                    www.dotbd.com
+                    www.sardarglobal.net
                   </a>
                 </div>
               </div>

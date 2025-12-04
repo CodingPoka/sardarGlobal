@@ -14,23 +14,27 @@ import { Award, TrendingUp, Heart } from "lucide-react";
 const slides = [
   {
     image: slide1,
-    title: "Welcome to Sardar Global Trading Co. Ltd. (SGTCL)",
-    subtitle: "Leading Trading & Supply Solutions Since 2015",
+    title: "Welcome to Sardar Global Trading Co. Ltd.",
+    subtitle:
+      "Leading International Trading & trusted Supply Solutions Since 2015",
   },
   {
     image: slide2,
-    title: "Import • Export • Global Sourcing",
+    title: "Import • Export • Global Sourcing &Trading",
     subtitle: "Quality, Reliability, and On-Time Delivery — Always",
   },
   {
     image: slide3,
     title: "Your Trusted Partner Across Multiple Industries",
-    subtitle: "Construction | Relief | Chemicals | Agriculture | IT Solutions",
+    subtitle:
+      "LiveStock | Relief | Agriculture Fertilizer & Chemical | Jute & Germents ",
   },
   {
     image: slide4,
-    title: "Supporting UN, NGOs & Government Projects",
-    subtitle: "Delivering Relief Items, Lab Equipment & Technical Supplies",
+    title:
+      "Supporting UN Agencies, Leading NGOs & Government and Multinational Corporations",
+    subtitle:
+      "Delivering Relief Items, Lab Proudct & Consumables ,  & Technical Supplies",
   },
   {
     image: slide5,
