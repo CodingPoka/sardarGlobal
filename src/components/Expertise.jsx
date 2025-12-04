@@ -76,6 +76,27 @@ const Expertise = () => {
   const expertiseData = [
     {
       id: 1,
+      title: "Artificial Insemination Complete Solutions",
+      icon: Microscope,
+      color: "teal",
+      gradient: "from-teal-500 to-teal-700",
+      bgColor: "bg-teal-50",
+      borderColor: "border-teal-200",
+      description:
+        "Delivering end-to-end services for establishing laboratories specializing in reproductive biotechnology for bovines, buffaloes, and goats. Our comprehensive product range includes semen straws, AI sheaths, AI guns, AI gloves, and liquid nitrogen containers, ensuring efficient and effective breeding operations.",
+      products: [
+        "Semen Straws",
+        "AI Sheaths",
+        "AI Guns",
+        "AI Gloves",
+        "Liquid Nitrogen Containers",
+        "Laboratory Setup",
+      ],
+      images: [s3a, s3b, s3c],
+      stats: { labs: "15+", species: "3 Types" },
+    },
+    {
+      id: 2,
       title: "Disaster & Refugee Support",
       icon: Building2,
       color: "blue",
@@ -97,7 +118,7 @@ const Expertise = () => {
       stats: { projects: "50+", clients: "UNHCR, NGOs" },
     },
     {
-      id: 2,
+      id: 3,
       title: "Flexible Printing & Packaging Materials",
       icon: Package,
       color: "purple",
@@ -116,27 +137,6 @@ const Expertise = () => {
       ],
       images: [s2a, s2b, s2c],
       stats: { products: "100+", quality: "Premium" },
-    },
-    {
-      id: 3,
-      title: "Artificial Insemination Complete Solutions",
-      icon: Microscope,
-      color: "teal",
-      gradient: "from-teal-500 to-teal-700",
-      bgColor: "bg-teal-50",
-      borderColor: "border-teal-200",
-      description:
-        "Delivering end-to-end services for establishing laboratories specializing in reproductive biotechnology for bovines, buffaloes, and goats. Our comprehensive product range includes semen straws, AI sheaths, AI guns, AI gloves, and liquid nitrogen containers, ensuring efficient and effective breeding operations.",
-      products: [
-        "Semen Straws",
-        "AI Sheaths",
-        "AI Guns",
-        "AI Gloves",
-        "Liquid Nitrogen Containers",
-        "Laboratory Setup",
-      ],
-      images: [s3a, s3b, s3c],
-      stats: { labs: "15+", species: "3 Types" },
     },
     {
       id: 4,
