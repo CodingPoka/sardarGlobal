@@ -16,7 +16,7 @@ const slides = [
     image: slide1,
     title: "Welcome to Sardar Global Trading Co. Ltd.",
     subtitle:
-      "Leading International Trading & trusted Supply Solutions Since 2015",
+      "Your Personal Trading Company | Leading International Trading & Trusted Supply Solutions Since 2015",
   },
   {
     image: slide2,
