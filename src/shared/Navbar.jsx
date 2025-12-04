@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-30 bg-gradient-to-r from-blue-950 via-blue-900 to-blue-950 shadow-lg border-b border-blue-800">
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-        <div className="flex h-16 md:h-18 lg:h-20 items-center justify-between">
+        <div className="flex h-20 md:h-22 lg:h-24 xl:h-28 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
             <NavLink to="/" className="flex items-center gap-2">
@@ -31,11 +31,11 @@ const Navbar = () => {
               <img
                 src={mainLogo}
                 alt="Company Logo"
-                className="h-12 md:h-14 lg:h-16 xl:h-16 w-auto object-contain"
+                className="h-16 md:h-20 lg:h-24 xl:h-28 w-auto object-contain"
               />
               <div className="hidden sm:flex flex-col">
                 <span className="text-base md:text-lg xl:text-xl font-semibold text-white tracking-tight">
-                  Sardar Global Trading Co. Ltd ds
+                  Sardar Global Trading Co. Ltd
                 </span>
                 <span className="text-xs md:text-sm text-amber-400 font-light italic tracking-wide">
                   ---------- Your Personal Trading Company
