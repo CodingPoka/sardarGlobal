@@ -45,13 +45,13 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-2 xl:gap-4 2xl:gap-6">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-7">
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  `px-3 py-2 xl:px-4 2xl:px-5 text-sm xl:text-base font-medium rounded-md transition-colors duration-150 
+                  `px-4 py-2.5 xl:px-5 xl:py-3 2xl:px-6 2xl:py-3 text-base xl:text-lg 2xl:text-xl font-medium rounded-md transition-colors duration-150 
                   ${
                     isActive
                       ? "text-amber-400 border-b-2 border-amber-400"
