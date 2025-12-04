@@ -317,7 +317,7 @@ const AnimatedTitle = ({ text, slideIndex, current }) => {
           <motion.span
             key={`${word}-${i}`}
             variants={wordVariants[slideIndex]}
-            className="inline-block mr-1"
+            className="inline-block mr-2 md:mr-3"
           >
             {word}
           </motion.span>
