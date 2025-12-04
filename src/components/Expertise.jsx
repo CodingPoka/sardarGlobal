@@ -76,7 +76,7 @@ const Expertise = () => {
   const expertiseData = [
     {
       id: 1,
-      title: "Construction & Refugee Support",
+      title: "Disaster & Refugee Support",
       icon: Building2,
       color: "blue",
       gradient: "from-blue-500 to-blue-700",
@@ -98,7 +98,7 @@ const Expertise = () => {
     },
     {
       id: 2,
-      title: "Flexible Printing & Packaging",
+      title: "Flexible Printing & Packaging Materials",
       icon: Package,
       color: "purple",
       gradient: "from-purple-500 to-purple-700",
@@ -119,7 +119,7 @@ const Expertise = () => {
     },
     {
       id: 3,
-      title: "Artificial Insemination Solutions",
+      title: "Artificial Insemination Complete Solutions",
       icon: Microscope,
       color: "teal",
       gradient: "from-teal-500 to-teal-700",
@@ -140,7 +140,7 @@ const Expertise = () => {
     },
     {
       id: 4,
-      title: "Chemical Supplies",
+      title: "Agricultural Fertilizer & Chemical Suppliers",
       icon: Beaker,
       color: "indigo",
       gradient: "from-indigo-500 to-indigo-700",
@@ -160,7 +160,7 @@ const Expertise = () => {
     },
     {
       id: 5,
-      title: "Agriculture Solutions",
+      title: "Jute Products",
       icon: Sprout,
       color: "green",
       gradient: "from-green-500 to-green-700",
@@ -180,7 +180,7 @@ const Expertise = () => {
     },
     {
       id: 6,
-      title: "Relief & Gift Items",
+      title: "Lifestyle & Fashion",
       icon: Gift,
       color: "amber",
       gradient: "from-amber-500 to-amber-700",
@@ -197,25 +197,6 @@ const Expertise = () => {
       ],
       images: [s6a, s6b, s6c, s6d, s6e],
       stats: { items: "500+", partners: "Red Crescent" },
-    },
-    {
-      id: 7,
-      title: "IT & Networking Solutions",
-      icon: Laptop,
-      color: "cyan",
-      gradient: "from-cyan-500 to-cyan-700",
-      bgColor: "bg-cyan-50",
-      borderColor: "border-cyan-200",
-      description:
-        "Providing advanced IT accessories and networking equipment to meet modern technological needs.",
-      products: [
-        "IT Accessories",
-        "Networking Equipment",
-        "Computer Hardware",
-        "Tech Solutions",
-      ],
-      images: [s7a, s7b, s7c],
-      stats: { solutions: "50+", support: "24/7" },
     },
   ];
 
