@@ -7,7 +7,7 @@ import slide4 from "../assets/homeImage/slide4.jpg";
 import slide5 from "../assets/homeImage/slide5.jpeg";
 import slide6 from "../assets/homeImage/slide6.png";
 import section1 from "../assets/homeImage/section1.jpeg";
-import section2 from "../assets/homeImage/section2.jpg";
+import section2 from "../assets/homeImage/section2.jpeg";
 import section5 from "../assets/homeImage/section5.jpg";
 import { Award, TrendingUp, Heart } from "lucide-react";
 
