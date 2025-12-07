@@ -6,7 +6,7 @@ const navItems = [
   { name: "Home", to: "/" },
   { name: "Products", to: "/products" },
   { name: "Client", to: "/clients" },
-  // { name: "Partner", to: "/partners" },
+  { name: "Partner", to: "/partners" },
   { name: "Expertise", to: "/expertise" },
   // { name: "Certificate", to: "/certificate" },
   { name: "About Us", to: "/about" },
