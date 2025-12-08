@@ -223,18 +223,6 @@ const TopItems = () => {
                 ))}
               </Marquee>
             </div>
-
-            {/* Info Text */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-center mt-8 px-4"
-            >
-              <p className="text-gray-500 text-sm sm:text-base">
-                Hover over products to pause • Click to view details
-              </p>
-            </motion.div>
           </>
         )}
       </section>
