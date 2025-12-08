@@ -21,6 +21,7 @@ import AdminProduct from "./components/AdminProduct";
 import Footer from "./shared/Footer";
 import AdminFooter from "./components/AdminFooter";
 import ScrollToTop from "./components/ScrollToTop";
+import ImvPartnership from "./components/ImvPartnership";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
         <Navbar />
         <Home />
         <TopItems />
+        <ImvPartnership />
         <About />
         <Contact />
         <Footer />
@@ -121,6 +123,17 @@ const router = createBrowserRouter([
         <ScrollToTop />
         <Navbar />
         <Expertise />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/imv-partnership",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <ImvPartnership />
         <Footer />
       </div>
     ),
