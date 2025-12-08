@@ -2,16 +2,22 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import slide1 from "../assets/homeImage/slide1.jpg";
 import slide2 from "../assets/homeImage/slide2.jpg";
-import slide3 from "../assets/homeImage/slide3.jpeg";
+import slide3 from "../assets/homeImage/slide3.png";
 import slide4 from "../assets/homeImage/slide4.jpg";
-import slide5 from "../assets/homeImage/slide5.jpeg";
-import slide6 from "../assets/homeImage/slide6.png";
+import slide5 from "../assets/homeImage/slide5.png";
+import slide6 from "../assets/homeImage/slide6.jpeg";
 import slide7 from "../assets/homeImage/slide7.png";
 import slide8 from "../assets/homeImage/slide8.jpg";
 import section1 from "../assets/homeImage/section1.jpg";
 import section2 from "../assets/homeImage/section2.jpeg";
 import section5 from "../assets/homeImage/section5.jpg";
-import { Award, TrendingUp, Heart } from "lucide-react";
+import {
+  Award,
+  TrendingUp,
+  Heart,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 const slides = [
   {
@@ -430,6 +436,15 @@ const AnimatedSubtitle = ({ text, slideIndex, current }) => (
 const Home = () => {
   const [current, setCurrent] = useState(0);
 
+  // Navigation functions
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
   // Auto change slide (3.5s)
   useEffect(() => {
     const interval = setInterval(() => {
@@ -486,6 +501,22 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        {/* Navigation Buttons */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 md:p-4 rounded-full transition-all hover:scale-110 border border-white/30"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 md:p-4 rounded-full transition-all hover:scale-110 border border-white/30"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+        </button>
 
         {/* Dots indicator */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">

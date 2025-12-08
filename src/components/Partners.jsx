@@ -6,7 +6,6 @@ import {
   Award,
   MapPin,
   ExternalLink,
-  CheckCircle2,
   Sparkles,
   Package,
   BadgeCheck,
@@ -14,11 +13,21 @@ import {
   Shield,
 } from "lucide-react";
 import partnerHero from "../assets/partnersImage/partnerHero.jpg";
+import plogo1 from "../assets/partnersImage/plogo1.jpg";
+import plogo2 from "../assets/partnersImage/plogo2.jpg";
+import plogo3 from "../assets/partnersImage/plogo3.jpg";
+import plogo4 from "../assets/partnersImage/plogo4.jpg";
+import plogo5 from "../assets/partnersImage/plogo5.jpg";
+import plogo6 from "../assets/partnersImage/plogo6.jpg";
+import plogo7 from "../assets/partnersImage/plogo7.jpg";
+import plogo8 from "../assets/partnersImage/plogo8.jpg";
+import plogo9 from "../assets/partnersImage/plogo9.jpg";
 
 const Partners = () => {
   const partners = [
     {
       id: 1,
+      logo: plogo1,
       title: "SHIJIAZHUANG LEAMANDOU CHEMICALS CO. LTD & LEMANDOU",
       type: "Sole Distributor",
       product: "Aluminum Foil",
@@ -27,11 +36,13 @@ const Partners = () => {
       location:
         "17th Floor, Block A, COFCO Hebei Plaza, No. 345 Youyi North Street, Shijiazhuang 050071 China",
       country: "China",
+      website: "https://www.lemandou.com/",
       icon: Package,
       gradient: "from-blue-500 to-cyan-500",
     },
     {
       id: 2,
+      logo: plogo2,
       title: "Chengdu Golden Bridge Technology Co., Ltd.",
       type: "Sole Distributor",
       product: "Liquid Nitrogen Container",
@@ -40,11 +51,13 @@ const Partners = () => {
       location:
         "No # 486, GuangHua East Third Road, QingYang, District Chengdu SiChuan 61000, P. R China",
       country: "China",
+      website: "https://www.bio-equip.cn/",
       icon: Building2,
       gradient: "from-purple-500 to-pink-500",
     },
     {
       id: 3,
+      logo: plogo3,
       title: "Bankim Plast & JJ Plastalloy Pvt. Ltd.",
       type: "Authorized Sole Distributor",
       product: "Master Batch",
@@ -53,11 +66,13 @@ const Partners = () => {
       location:
         "601, Bhakti Park, RHB Road, Mulund (W) Mumbai - 00080, Maharashtra & A-2, Badsha Bagh Colony, Maldahiya, Varanasi, Uttar Pradesh 221 002, India",
       country: "India",
+      website: "https://www.jjplastalloy.com/",
       icon: Award,
       gradient: "from-orange-500 to-red-500",
     },
     {
       id: 4,
+      logo: plogo4,
       title: "Nelson Techno Medical Co., Ltd.",
       type: "Authorized Sole Distributor",
       product: "Veterinary & Livestock Equipment, AI Accessories",
@@ -65,11 +80,13 @@ const Partners = () => {
         "Authorized Sole Distributor of Nelson Techno Medical Co., Ltd. for equipment of veterinary and livestock production, Artificial Insemination accessories.",
       location: "Room A1201 No.400 Pudian Road, Pudong, Shanghai 200122, China",
       country: "China",
+      website: "https://nelson.goldsupplier.com/",
       icon: Shield,
       gradient: "from-green-500 to-emerald-500",
     },
     {
       id: 5,
+      logo: plogo5,
       title: "Zhangjiagang Weinhold Industrial Co., Ltd",
       type: "Sole Distributor",
       product: "Artificial Insemination Hand Gloves",
@@ -78,11 +95,14 @@ const Partners = () => {
       location:
         "No.8 Chuangye Road, Fenghuang Town, Jiangsu Province, CN 215614, China",
       country: "China",
+      website:
+        "https://www.compamed-tradefair.com/vis/v1/en/exhprofiles/uoYBmv5pRFiKIPdcGTKhdg",
       icon: BadgeCheck,
       gradient: "from-teal-500 to-cyan-500",
     },
     {
       id: 6,
+      logo: plogo6,
       title: "IMV Technology, France",
       type: "Authorized Sole Distributor",
       product: "AI Consumable and AI LAB Equipment",
@@ -90,11 +110,13 @@ const Partners = () => {
         "Authorized Sole Distributor of Bangladesh for IMV Technology, France for AI Consumable and AI LAB equipment's.",
       location: "ZI n° 1 Est, 61300 L'Aigle, France",
       country: "France",
+      website: "https://www.imv-technologies.com/",
       icon: TrendingUp,
       gradient: "from-indigo-500 to-blue-500",
     },
     {
       id: 7,
+      logo: plogo7,
       title: "Paper Bag Mfg Co & Pure Trade Links (P) Ltd.",
       type: "Authorized Distributor",
       product: "Kraft Paper and Kraft Paper Bag",
@@ -102,11 +124,13 @@ const Partners = () => {
         "Authorized distributor of Paper Bag Mfg Co and Pure Trade Links (P) Ltd., India for Kraft Paper and Kraft Paper Bag.",
       location: "India",
       country: "India",
+      website: "https://www.paperbagmfg.com/",
       icon: Package,
       gradient: "from-yellow-500 to-orange-500",
     },
     {
       id: 8,
+      logo: plogo8,
       title: "Fujian Yamei Industry & Trade CO., Ltd.",
       type: "Authorized Distributor",
       product: "Mosquito Net",
@@ -115,21 +139,28 @@ const Partners = () => {
       location:
         "3F, J District, Fen'an Industry Park, 142# JianXin North Road, Fuzhou, Fujian Province, China",
       country: "China",
+      website: "http://www.yaheln.com/",
       icon: Shield,
       gradient: "from-pink-500 to-rose-500",
     },
     {
       id: 9,
+      logo: plogo9,
       title: "NRS Relief",
       type: "Authorized Distributor",
       product: "Sleeping Mats",
       description: "Authorized Distributor of NRS Relief for Sleeping Mats.",
       location: "PO Box 261218, Jebel Ali Free Zone, Dubai, U.A.E.",
       country: "UAE",
+      website: "https://www.nrsrelief.com/",
       icon: Globe2,
       gradient: "from-violet-500 to-purple-500",
     },
   ];
+
+  const handlePartnerClick = (website) => {
+    window.open(website, "_blank", "noopener,noreferrer");
+  };
 
   // Animation variants
   const containerVariants = {
@@ -137,18 +168,19 @@ const Partners = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.12,
       },
     },
   };
 
   const cardVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: 40, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
+        duration: 0.7,
+        ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
   };
@@ -327,8 +359,8 @@ const Partners = () => {
             </span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Delivering world-class products through exclusive distribution
-            agreements with leading international manufacturers
+            Click on any partner to visit their official website and explore
+            their global presence
           </p>
         </motion.div>
 
@@ -349,38 +381,50 @@ const Partners = () => {
                 boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15)",
                 transition: { duration: 0.3 },
               }}
-              className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-gray-100 hover:border-blue-200"
+              onClick={() => handlePartnerClick(partner.website)}
+              className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-gray-200 hover:border-blue-400 cursor-pointer"
             >
-              {/* Gradient Header */}
-              <div
-                className={`relative h-32 sm:h-36 lg:h-40 bg-gradient-to-r ${partner.gradient} overflow-hidden`}
-              >
-                {/* Animated Background Pattern */}
-                <div className="absolute inset-0 opacity-20">
-                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjMiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')]"></div>
-                </div>
+              {/* Logo Section */}
+              <div className="relative h-52 sm:h-56 lg:h-60 bg-white flex items-center justify-center p-8 sm:p-10 overflow-hidden border-b-2 border-gray-100">
+                {/* Subtle Pattern Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-blue-50/30"></div>
 
-                {/* Icon */}
-                <div className="absolute top-4 left-4 sm:top-6 sm:left-6">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30 group-hover:scale-110 transition-transform duration-300">
-                    <partner.icon className="w-7 h-7 sm:w-8 sm:h-8 lg:w-9 lg:h-9 text-white" />
+                {/* Gradient Background on Hover */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-r ${partner.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                ></div>
+
+                {/* Partner Logo */}
+                <img
+                  src={partner.logo}
+                  alt={partner.title}
+                  className="relative z-10 max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-md"
+                />
+
+                {/* Visit Website Badge - Shows on Hover */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-600 text-white rounded-full shadow-lg">
+                    <ExternalLink className="w-4 h-4" />
+                    <span className="text-xs sm:text-sm font-semibold">
+                      Visit Website
+                    </span>
                   </div>
                 </div>
 
                 {/* Type Badge */}
-                <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
-                  <div className="px-3 py-1.5 sm:px-4 sm:py-2 bg-white/90 backdrop-blur-sm rounded-full border border-white/50 shadow-lg">
-                    <span className="text-xs sm:text-sm font-bold text-gray-800">
+                <div className="absolute top-4 left-4">
+                  <div className="px-4 py-2 bg-white rounded-full border-2 border-blue-100 shadow-lg group-hover:border-blue-300 transition-colors">
+                    <span className="text-xs sm:text-sm font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                       {partner.type}
                     </span>
                   </div>
                 </div>
 
                 {/* Country Badge */}
-                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
-                  <div className="flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/30">
-                    <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
-                    <span className="text-xs sm:text-sm font-semibold text-white">
+                <div className="absolute bottom-4 left-4">
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border-2 border-gray-100 shadow-lg group-hover:border-blue-200 transition-colors">
+                    <MapPin className="w-4 h-4 text-blue-600" />
+                    <span className="text-xs sm:text-sm font-bold text-gray-800">
                       {partner.country}
                     </span>
                   </div>
@@ -388,44 +432,52 @@ const Partners = () => {
               </div>
 
               {/* Card Content */}
-              <div className="p-6 sm:p-7 lg:p-8">
+              <div className="p-7 sm:p-8 lg:p-9">
                 {/* Partner Title */}
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-blue-600 transition-colors leading-tight">
+                <h3 className="text-xl sm:text-2xl lg:text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors leading-tight line-clamp-2">
                   {partner.title}
                 </h3>
 
                 {/* Product Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-blue-50 to-purple-50 rounded-full mb-4 sm:mb-5 border border-blue-100">
-                  <Package className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
-                  <span className="text-xs sm:text-sm font-bold text-blue-800">
+                <div className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl mb-5 border-2 border-blue-100 group-hover:border-blue-200 transition-colors">
+                  <Package className="w-5 h-5 text-blue-600" />
+                  <span className="text-sm font-bold text-blue-900">
                     {partner.product}
                   </span>
                 </div>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-5">
+                <p className="text-base text-gray-600 leading-relaxed mb-5 line-clamp-3">
                   {partner.description}
                 </p>
 
                 {/* Location */}
-                <div className="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200 group-hover:border-blue-200 group-hover:bg-blue-50/50 transition-all">
-                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
+                <div className="flex items-start gap-3 p-4 bg-gradient-to-br from-gray-50 to-blue-50/30 rounded-2xl border-2 border-gray-100 group-hover:border-blue-200 group-hover:bg-blue-50/50 transition-all">
+                  <MapPin className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-gray-700 leading-relaxed line-clamp-2">
                     {partner.location}
                   </p>
                 </div>
 
-                {/* Verified Badge */}
-                <div className="mt-5 sm:mt-6 flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-500" />
-                  <span className="text-xs sm:text-sm font-semibold text-green-600">
-                    Verified Partnership
-                  </span>
+                {/* Click to Visit Indicator */}
+                <div className="mt-5 sm:mt-6 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <BadgeCheck className="w-5 h-5 sm:w-6 sm:h-6 text-green-500" />
+                    <span className="text-xs sm:text-sm font-semibold text-green-600">
+                      Verified Partnership
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-blue-600 group-hover:text-blue-700 transition-colors">
+                    <span className="text-xs sm:text-sm font-semibold">
+                      Learn More
+                    </span>
+                    <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </div>
 
               {/* Shine Effect on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none"></div>
             </motion.div>
           ))}
         </motion.div>
@@ -498,6 +550,18 @@ const Partners = () => {
         }
         .animate-pulse {
           animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .line-clamp-3 {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
       `}</style>
     </div>

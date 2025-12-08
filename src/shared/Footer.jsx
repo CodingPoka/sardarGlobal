@@ -35,12 +35,12 @@ const Footer = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      text: "House-219/B, Road- 03, Mohakhali DOHS, Dhaka- 1206, Bangladesh",
+      text: " Sardar Global Trading Co. Ltd. House # 11, Road # 4 Dhanmondi R/A, Dhaka 1205, Bangladesh ",
     },
-    { icon: Phone, text: "+880 1713-007117" },
-    { icon: Phone, text: "+880 1819-240464" },
-    { icon: Mail, text: "sgtcl.bd@gmail.com" },
-    { icon: Globe, text: "www.sgtcl.com" },
+    { icon: Phone, text: "+8801 71303 3888" },
+    { icon: Phone, text: "+8802 9614490" },
+    { icon: Mail, text: "info@sardarglobal.net" },
+    { icon: Globe, text: "www.sardarglobal.net" },
   ];
 
   return (
