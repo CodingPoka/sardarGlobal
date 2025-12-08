@@ -6,6 +6,8 @@ import slide3 from "../assets/homeImage/slide3.jpeg";
 import slide4 from "../assets/homeImage/slide4.jpg";
 import slide5 from "../assets/homeImage/slide5.jpeg";
 import slide6 from "../assets/homeImage/slide6.png";
+import slide7 from "../assets/homeImage/slide7.png";
+import slide8 from "../assets/homeImage/slide8.jpg";
 import section1 from "../assets/homeImage/section1.jpg";
 import section2 from "../assets/homeImage/section2.jpeg";
 import section5 from "../assets/homeImage/section5.jpg";
@@ -15,38 +17,47 @@ const slides = [
   {
     image: slide1,
     title: "Welcome to Sardar Global Trading Co. Ltd.",
-    subtitle:
-      "Your Personal Trading Company | Leading International Trading & Trusted Supply Solutions Since 2015",
+    subtitle: "Your Trusted Global Trading Partner",
   },
   {
     image: slide2,
-    title: "Import • Export • Global Sourcing &Trading",
-    subtitle: "Quality, Reliability, and On-Time Delivery — Always",
+    title: "Import • Export • Global Sourcing & Supply",
+    subtitle: "Delivering International Trading & Supply Solutions Since 2015",
   },
   {
     image: slide3,
-    title: "Your Trusted Partner Across Multiple Industries",
-    subtitle:
-      "LiveStock | Relief | Agriculture Fertilizer & Chemical | Jute & Germents ",
+    title: "Your Reliable Partner Across Diverse Industries",
+    subtitle: "Quality • Integrity • Value • Timely Delivery • Reliability",
   },
   {
     image: slide4,
-    title:
-      "Supporting UN Agencies, Leading NGOs & Government and Multinational Corporations",
+    title: "Proudly Supporting UN Agencies, Government, NGOs & Corporates",
     subtitle:
-      "Delivering Relief Items, Lab Proudct & Consumables ,  & Technical Supplies",
+      "Supplying Relief & Deguster Items, Livestock AI Laboratory Equipment, Agricultural Fertilizers, Printing & Packaging Raw Materials, Jute & Textile Products",
   },
   {
     image: slide5,
-    title: "Advanced Artificial Insemination Solutions",
+    title: "Advanced Animal Artificial Insemination (AI) Solutions",
     subtitle:
-      "Delivering high-quality AI tools & biotechnology support for modern livestock breeding.",
+      "Providing World-Class Breeding Technologies (LAB) & Consumables for Bovine & Goat",
   },
   {
     image: slide6,
-    title: "Innovative AI Technology for Livestock Productivity",
+    title: "Innovative Flexible Packaging & Printing Raw Materials",
     subtitle:
-      "Supplying semen straws, AI guns, sheaths, gloves, and LN₂ containers for efficient breeding operations.",
+      "Supplying Premium Alu-Foil, PE, PET, and Specialized Packaging Materials",
+  },
+  {
+    image: slide7,
+    title: "Premium Jute Products",
+    subtitle:
+      "Exporting Jute Bags, Jute Yarn, and Jute-Based Industrial Products",
+  },
+  {
+    image: slide8,
+    title: "Ready-Made Garments (RMG) Products",
+    subtitle:
+      "Exporting and Local Supplying High-Quality Lifestyle & Fashion Garments",
   },
 ];
 
@@ -121,6 +132,28 @@ const titleContainerVariants = [
       },
     },
   },
+  // Slide 7 – natural smooth
+  {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.07,
+        delayChildren: 0.08,
+      },
+    },
+  },
+  // Slide 8 – fashion style
+  {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.15,
+      },
+    },
+  },
 ];
 
 /**
@@ -185,6 +218,26 @@ const wordVariants = [
         type: "spring",
         bounce: 0.4,
       },
+    },
+  },
+  // Slide 7 – organic rise (jute/natural)
+  {
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.55, ease: [0.34, 1.56, 0.64, 1] },
+    },
+  },
+  // Slide 8 – elegant slide (fashion)
+  {
+    hidden: { opacity: 0, x: -40, rotateY: -10 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      rotateY: 0,
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
     },
   },
 ];
@@ -254,6 +307,26 @@ const subtitleVariants = [
       },
     },
   },
+  // Slide 7 – gentle wave (natural/organic feel)
+  {
+    hidden: { opacity: 0, y: 25, x: -15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      transition: { duration: 0.5, delay: 0.25, ease: [0.34, 1.56, 0.64, 1] },
+    },
+  },
+  // Slide 8 – sophisticated fade (fashion/elegance)
+  {
+    hidden: { opacity: 0, y: 20, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] },
+    },
+  },
 ];
 
 /**
@@ -295,6 +368,18 @@ const imageVariants = [
     initial: { scale: 1.35, y: -50 },
     animate: { scale: 1, y: 0 },
     transition: { duration: 2, ease: [0.25, 0.1, 0.25, 1] },
+  },
+  // Slide 7 – Diagonal pan with zoom (jute/organic movement)
+  {
+    initial: { scale: 1.3, x: -60, y: -40 },
+    animate: { scale: 1, x: 0, y: 0 },
+    transition: { duration: 2.2, ease: [0.34, 1.56, 0.64, 1] },
+  },
+  // Slide 8 – Smooth zoom with subtle rotation (fashion/elegance)
+  {
+    initial: { scale: 1.25, rotate: -1.5 },
+    animate: { scale: 1, rotate: 0 },
+    transition: { duration: 2, ease: [0.22, 1, 0.36, 1] },
   },
 ];
 
