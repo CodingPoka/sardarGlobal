@@ -39,7 +39,7 @@ const ImvPartnership = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-950 leading-tight"
             >
-              Proud to be the only sole distributor of IMV Technologies in
+              Proud to be the only one sole distributor of IMV Technologies in
               Bangladesh
             </motion.h1>
 
