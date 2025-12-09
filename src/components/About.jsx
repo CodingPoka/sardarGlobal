@@ -69,7 +69,7 @@ const About = () => {
     },
     {
       icon: Sparkles,
-      title: "Innovation king",
+      title: "Innovation",
       description:
         "Continuously adapting to market trends and customer demands",
       color: "purple",
