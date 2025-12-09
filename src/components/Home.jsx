@@ -39,7 +39,7 @@ const slides = [
     image: slide4,
     title: "Proudly Supporting UN Agencies, Government, NGOs & Corporates",
     subtitle:
-      "Supplying Relief & Deguster Items, Livestock AI Laboratory Equipment, Agricultural Fertilizers, Printing & Packaging Raw Materials, Jute & Textile Products",
+      "Supplying Relief & Disaster Items, Livestock AI Laboratory Equipment, Agricultural Fertilizers, Printing & Packaging Raw Materials, Jute & Textile Products",
   },
   {
     image: slide5,
