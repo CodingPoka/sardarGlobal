@@ -34,10 +34,10 @@ const Navbar = () => {
                 className="h-14 md:h-16 lg:h-20 xl:h-24 w-auto object-contain"
               />
               <div className="hidden sm:flex flex-col">
-                <span className="text-base md:text-lg xl:text-xl font-semibold text-white tracking-tight">
+                <span className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-white tracking-tight">
                   Sardar Global Trading Co. Ltd
                 </span>
-                <span className="text-xs md:text-sm text-amber-400 font-light italic tracking-wide">
+                <span className="text-sm md:text-base lg:text-lg xl:text-xl text-amber-400 font-light italic tracking-wide">
                   ---------- Your Personal Trading Company
                 </span>
               </div>
