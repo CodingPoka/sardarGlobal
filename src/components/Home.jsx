@@ -49,7 +49,7 @@ const slides = [
   },
   {
     image: slide6,
-    title: "Innovative Flexible Packaging & Printing Raw Materials",
+    title: "Innovative Flexible Printing & Packaging Raw Materials",
     subtitle:
       "Supplying Premium Alu-Foil, PE, PET, and Specialized Packaging Materials",
   },
