@@ -104,7 +104,7 @@ const Contact = () => {
     <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50">
       <Toaster />
       {/* Banner */}
-      <section className="relative w-full h-[300px] md:h-[380px] lg:h-[480px] xl:h-[550px] overflow-hidden">
+      <section className="relative w-full h-[380px] sm:h-[420px] md:h-[480px] lg:h-[540px] xl:h-[580px] overflow-hidden">
         <img
           src={contactImage}
           alt="Contact"
@@ -124,32 +124,32 @@ const Contact = () => {
             className="max-w-4xl"
           >
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-amber-500/20 backdrop-blur-sm border border-amber-400/30 rounded-full px-6 py-2 mb-6">
-              <HeadphonesIcon className="w-5 h-5 text-amber-400" />
-              <span className="text-amber-300 font-semibold text-sm md:text-base">
+            <div className="inline-flex items-center gap-2 bg-amber-500/20 backdrop-blur-sm border border-amber-400/30 rounded-full px-4 py-2 sm:px-6 sm:py-2 mb-4 sm:mb-6">
+              <HeadphonesIcon className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
+              <span className="text-amber-300 font-semibold text-xs sm:text-sm md:text-base">
                 We're Here to Help
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4">
               Get In Touch
             </h1>
-            <p className="mt-4 text-base md:text-lg xl:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg xl:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed px-2">
               For business inquiries, quotations, partnerships, or general
               questions — our team is ready to support you 24/7.
             </p>
 
             {/* Quick Contact Info */}
-            <div className="flex flex-wrap justify-center gap-6 mt-8">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-5 py-3">
-                <Phone className="w-5 h-5 text-amber-400" />
-                <span className="text-white font-medium text-sm md:text-base">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mt-6 sm:mt-8">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3">
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 flex-shrink-0" />
+                <span className="text-white font-medium text-xs sm:text-sm md:text-base">
                   +8802 9614490
                 </span>
               </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-5 py-3">
-                <Mail className="w-5 h-5 text-amber-400" />
-                <span className="text-white font-medium text-sm md:text-base">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3">
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 flex-shrink-0" />
+                <span className="text-white font-medium text-xs sm:text-sm md:text-base break-all">
                   info@sardarglobal.net
                 </span>
               </div>

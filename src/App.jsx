@@ -5,7 +5,6 @@ import Home from "./components/Home";
 import Product from "./components/Product";
 import Client from "./components/Clients";
 import Contact from "./components/Contact";
-// import Membership from "./components/Membership";
 import About from "./components/About";
 import Certificate from "./components/Certificate";
 import Partners from "./components/Partners";
@@ -29,14 +28,14 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <Home />
         <TopItems />
         <ImvPartnership />
         <About />
         <Contact />
-        <Footer /> */}
-        <NotFound/>
+        <Footer />
+      
       </div>
     ),
   },
@@ -45,10 +44,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <Product />
-        <Footer /> */}
-          <NotFound/>
+        <Footer />
+      
       </div>
     ),
   },
@@ -68,10 +67,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <Client />
-        <Footer /> */}
-          <NotFound/>
+        <Footer />
+        
       </div>
     ),
   },
@@ -80,10 +79,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <Contact />
-        <Footer /> */}
-          <NotFound/>
+        <Footer />
+         
       </div>
     ),
   },
@@ -93,10 +92,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <About />
-        <Footer /> */}
-          <NotFound/>
+        <Footer />
+          
       </div>
     ),
   },
@@ -105,10 +104,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <Certificate />
-        <Footer /> */}
-          <NotFound/>
+        <Footer />
+        
       </div>
     ),
   },
@@ -117,10 +116,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <Partners />
-        <Footer /> */}
-          <NotFound/>
+        <Footer />
+     
       </div>
     ),
   },
@@ -129,10 +128,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <Expertise />
-        <Footer /> */}
-          <NotFound/>
+        <Footer />
+        
       </div>
     ),
   },
@@ -141,10 +140,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <ImvPartnership />
-        <Footer /> */}
-          <NotFound/>
+        <Footer />
+        
       </div>
     ),
   },
@@ -153,10 +152,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <TopItems />
-        <Footer /> */}
-          <NotFound/>
+        <Footer />
+        
       </div>
     ),
   },
@@ -165,15 +164,15 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <TopItemDetail />
-        <Footer /> */}
-          <NotFound/>
+        <Footer />
+   
       </div>
     ),
   },
   {
-    path: "/admin/login/sardarGlobal/bangladesh/trade/king",
+    path: "/admin/login/sardarGlobal/bangladesh/trade/",
     element: (
       <div>
         <ScrollToTop />
@@ -182,7 +181,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/admin/AdminDashboard/sardarGlobal/bangladesh/trade/king",
+    path: "/admin/AdminDashboard/sardarGlobal/bangladesh/trade/",
     element: (
       <div>
         <ScrollToTop />

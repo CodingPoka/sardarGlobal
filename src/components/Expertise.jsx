@@ -203,7 +203,7 @@ const Expertise = () => {
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50">
       {/* Hero Banner */}
-      <section className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[650px] overflow-hidden">
+      <section className="relative w-full h-[420px] sm:h-[460px] md:h-[520px] lg:h-[580px] xl:h-[620px] 2xl:h-[650px] overflow-hidden">
         <motion.img
           initial={{ scale: 1.2 }}
           animate={{ scale: 1 }}
@@ -252,10 +252,10 @@ const Expertise = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.3, type: "spring" }}
-              className="inline-flex items-center gap-2 bg-amber-500/20 backdrop-blur-sm border border-amber-400/30 rounded-full px-6 py-2 mb-6"
+              className="inline-flex items-center gap-2 bg-amber-500/20 backdrop-blur-sm border border-amber-400/30 rounded-full px-4 py-2 sm:px-6 sm:py-2 mb-4 sm:mb-6"
             >
-              <Sparkles className="w-5 h-5 text-amber-400" />
-              <span className="text-amber-300 font-semibold text-sm md:text-base">
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
+              <span className="text-amber-300 font-semibold text-xs sm:text-sm md:text-base">
                 Industry Leading Solutions
               </span>
             </motion.div>
@@ -264,7 +264,7 @@ const Expertise = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4"
             >
               Our Expertise
             </motion.h1>
@@ -272,7 +272,7 @@ const Expertise = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="mt-4 text-base md:text-lg xl:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+              className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg xl:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed px-2"
             >
               Delivering quality products and services across 7 diverse sectors,
               ensuring customer satisfaction and operational excellence since
@@ -284,7 +284,7 @@ const Expertise = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
-              className="flex flex-wrap justify-center gap-6 mt-10"
+              className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mt-6 sm:mt-8 md:mt-10"
             >
               {[
                 { label: "Industry Sectors", value: "7+" },
@@ -293,12 +293,14 @@ const Expertise = () => {
               ].map((stat, idx) => (
                 <div
                   key={idx}
-                  className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20"
+                  className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl px-3 py-4 sm:px-4 sm:py-4 md:px-6 md:py-5 border border-white/20 min-w-[90px] sm:min-w-[110px]"
                 >
-                  <p className="text-3xl xl:text-4xl font-bold text-amber-400">
+                  <p className="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold text-amber-400">
                     {stat.value}
                   </p>
-                  <p className="text-white/90 text-sm mt-1">{stat.label}</p>
+                  <p className="text-white/90 text-xs sm:text-sm mt-1 leading-tight">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </motion.div>
@@ -307,7 +309,7 @@ const Expertise = () => {
       </section>
 
       {/* Introduction Section */}
-      <section className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-12 md:py-16 xl:py-20">
+      <section className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-16 sm:py-12 md:py-16 xl:py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -161,14 +161,14 @@ const TopItems = () => {
                 {topProducts.map((product) => (
                   <div
                     key={product.id}
-                    className="mx-4 w-[450px] sm:w-[480px] lg:w-[520px]"
+                    className="mx-4 w-[320px] sm:w-[400px] md:w-[450px] lg:w-[480px] xl:w-[500px]"
                   >
                     <div
                       onClick={() => handleReadMore(product.id)}
                       className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl overflow-hidden border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 cursor-pointer transform-gpu will-change-transform"
                     >
                       {/* Product Image */}
-                      <div className="relative h-80 sm:h-96 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                      <div className="relative h-64 sm:h-80 md:h-96 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                         {product.imageUrl ? (
                           <img
                             src={product.imageUrl}

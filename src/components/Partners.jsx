@@ -13,20 +13,34 @@ import {
   Shield,
 } from "lucide-react";
 import partnerHero from "../assets/partnersImage/partnerHero.jpg";
-import plogo1 from "../assets/partnersImage/plogo1.jpg";
-import plogo2 from "../assets/partnersImage/plogo2.jpg";
-import plogo3 from "../assets/partnersImage/plogo3.jpg";
+import plogo1 from "../assets/partnersImage/plogo1.png";
+import plogo2 from "../assets/partnersImage/plogo2.png";
+import plogo3 from "../assets/partnersImage/plogo3.png";
 import plogo4 from "../assets/partnersImage/plogo4.jpg";
-import plogo5 from "../assets/partnersImage/plogo5.jpg";
-import plogo6 from "../assets/partnersImage/plogo6.jpg";
-import plogo7 from "../assets/partnersImage/plogo7.jpg";
-import plogo8 from "../assets/partnersImage/plogo8.jpg";
-import plogo9 from "../assets/partnersImage/plogo9.jpg";
+import plogo5 from "../assets/partnersImage/plogo5.png";
+import plogo6 from "../assets/partnersImage/plogo6.png";
+import plogo7 from "../assets/partnersImage/plogo7.png";
+import plogo8 from "../assets/partnersImage/plogo8.png";
+import plogo9 from "../assets/partnersImage/plogo9.png";
 
 const Partners = () => {
   const partners = [
     {
       id: 1,
+      logo: plogo6,
+      title: "IMV Technology, France",
+      type: "Authorized Sole Distributor",
+      product: "AI Consumable and AI LAB Equipment",
+      description:
+        "Authorized Sole Distributor of Bangladesh for IMV Technology, France for AI Consumable and AI LAB equipment's.",
+      location: "ZI n° 1 Est, 61300 L'Aigle, France",
+      country: "France",
+      website: "https://www.imv-technologies.com/",
+      icon: TrendingUp,
+      gradient: "from-indigo-500 to-blue-500",
+    },
+    {
+      id: 2,
       logo: plogo1,
       title: "SHIJIAZHUANG LEAMANDOU CHEMICALS CO. LTD & LEMANDOU",
       type: "Sole Distributor",
@@ -41,13 +55,14 @@ const Partners = () => {
       gradient: "from-blue-500 to-cyan-500",
     },
     {
-      id: 2,
+      id: 3,
       logo: plogo2,
-      title: "Chengdu Golden Bridge Technology Co., Ltd.",
+      title:
+        "Chengdu Golden Bridge Technology Co., Ltd., Chengdu ARO Technology Co., Ltd., Chengdu AiAo Technology Co. Ltd.",
       type: "Sole Distributor",
       product: "Liquid Nitrogen Container",
       description:
-        "Sole Distributorship with Chengdu Golden Bridge Technology Co., Ltd. for Liquid Nitrogen Container.",
+        "Sole Distributorship with Chengdu Golden Bridge Technology Co., Ltd., Chengdu ARO Technology Co., Ltd., and Chengdu AiAo Technology Co. Ltd. for Liquid Nitrogen Container.",
       location:
         "No # 486, GuangHua East Third Road, QingYang, District Chengdu SiChuan 61000, P. R China",
       country: "China",
@@ -56,9 +71,9 @@ const Partners = () => {
       gradient: "from-purple-500 to-pink-500",
     },
     {
-      id: 3,
+      id: 4,
       logo: plogo3,
-      title: "Bankim Plast & JJ Plastalloy Pvt. Ltd.",
+      title: "Bankim Plast Private Limited",
       type: "Authorized Sole Distributor",
       product: "Master Batch",
       description:
@@ -66,13 +81,13 @@ const Partners = () => {
       location:
         "601, Bhakti Park, RHB Road, Mulund (W) Mumbai - 00080, Maharashtra & A-2, Badsha Bagh Colony, Maldahiya, Varanasi, Uttar Pradesh 221 002, India",
       country: "India",
-      website: "https://www.jjplastalloy.com/",
+      website: "https://www.bankimplast.com/",
       icon: Award,
       gradient: "from-orange-500 to-red-500",
     },
     {
-      id: 4,
-      logo: plogo4,
+      id: 5,
+      logo: plogo6,
       title: "Nelson Techno Medical Co., Ltd.",
       type: "Authorized Sole Distributor",
       product: "Veterinary & Livestock Equipment, AI Accessories",
@@ -80,12 +95,12 @@ const Partners = () => {
         "Authorized Sole Distributor of Nelson Techno Medical Co., Ltd. for equipment of veterinary and livestock production, Artificial Insemination accessories.",
       location: "Room A1201 No.400 Pudian Road, Pudong, Shanghai 200122, China",
       country: "China",
-      website: "https://nelson.goldsupplier.com/",
+      website: "https://www.imv-technologies.com/",
       icon: Shield,
       gradient: "from-green-500 to-emerald-500",
     },
     {
-      id: 5,
+      id: 6,
       logo: plogo5,
       title: "Zhangjiagang Weinhold Industrial Co., Ltd",
       type: "Sole Distributor",
@@ -95,24 +110,9 @@ const Partners = () => {
       location:
         "No.8 Chuangye Road, Fenghuang Town, Jiangsu Province, CN 215614, China",
       country: "China",
-      website:
-        "https://www.compamed-tradefair.com/vis/v1/en/exhprofiles/uoYBmv5pRFiKIPdcGTKhdg",
+      website: "https://www.weinhold-corp.com/",
       icon: BadgeCheck,
       gradient: "from-teal-500 to-cyan-500",
-    },
-    {
-      id: 6,
-      logo: plogo6,
-      title: "IMV Technology, France",
-      type: "Authorized Sole Distributor",
-      product: "AI Consumable and AI LAB Equipment",
-      description:
-        "Authorized Sole Distributor of Bangladesh for IMV Technology, France for AI Consumable and AI LAB equipment's.",
-      location: "ZI n° 1 Est, 61300 L'Aigle, France",
-      country: "France",
-      website: "https://www.imv-technologies.com/",
-      icon: TrendingUp,
-      gradient: "from-indigo-500 to-blue-500",
     },
     {
       id: 7,
@@ -197,7 +197,7 @@ const Partners = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Hero Banner with Image */}
-      <section className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] overflow-hidden">
+      <section className="relative w-full h-[480px] sm:h-[520px] md:h-[560px] lg:h-[600px] xl:h-[640px] 2xl:h-[680px] overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
@@ -248,10 +248,10 @@ const Partners = () => {
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
-            className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 bg-white/20 backdrop-blur-sm rounded-full mb-4 sm:mb-5 lg:mb-6 border border-white/30 shadow-lg"
+            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 bg-white/20 backdrop-blur-sm rounded-full mb-3 sm:mb-4 lg:mb-5 border border-white/30 shadow-lg"
           >
-            <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-300 animate-pulse" />
-            <span className="text-white font-semibold text-sm sm:text-base lg:text-lg">
+            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-yellow-300 animate-pulse" />
+            <span className="text-white font-semibold text-xs sm:text-sm md:text-base lg:text-lg">
               Global Distribution Network
             </span>
           </motion.div>
@@ -261,7 +261,7 @@ const Partners = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-7xl font-bold text-white mb-4 sm:mb-5 lg:mb-6 leading-tight"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-3 sm:mb-4 lg:mb-5 leading-tight"
           >
             Our Esteemed{" "}
             <span className="bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-300 bg-clip-text text-transparent">
@@ -289,44 +289,44 @@ const Partners = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.6 }}
-            className="flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6 mt-8 sm:mt-10 lg:mt-12"
+            className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 mt-6 sm:mt-8 md:mt-10 lg:mt-12"
           >
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl px-6 py-4 sm:px-8 sm:py-5 lg:px-10 lg:py-6 border border-white/20 shadow-xl">
+            <div className="bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl px-3 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-4 lg:px-8 lg:py-5 border border-white/20 shadow-xl">
               <div className="flex items-center gap-2 sm:gap-3">
-                <Globe2 className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-yellow-300" />
+                <Globe2 className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-yellow-300 flex-shrink-0" />
                 <div className="text-left">
-                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+                  <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
                     9+
                   </p>
-                  <p className="text-xs sm:text-sm lg:text-base text-blue-200">
+                  <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-blue-200 whitespace-nowrap">
                     Global Brands
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl px-4 py-3 sm:px-5 sm:py-4 lg:px-7 lg:py-5 border border-white/20 shadow-xl">
+            <div className="bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-4 lg:px-7 lg:py-5 border border-white/20 shadow-xl">
               <div className="flex items-center gap-2 sm:gap-3">
-                <MapPin className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-green-300" />
+                <MapPin className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-green-300 flex-shrink-0" />
                 <div className="text-left">
-                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+                  <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
                     5
                   </p>
-                  <p className="text-xs sm:text-sm lg:text-base text-blue-200">
+                  <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-blue-200 whitespace-nowrap">
                     Countries
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl px-4 py-3 sm:px-5 sm:py-4 lg:px-7 lg:py-5 border border-white/20 shadow-xl">
+            <div className="bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-4 lg:px-7 lg:py-5 border border-white/20 shadow-xl">
               <div className="flex items-center gap-2 sm:gap-3">
-                <BadgeCheck className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-pink-300" />
+                <BadgeCheck className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-pink-300 flex-shrink-0" />
                 <div className="text-left">
-                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+                  <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
                     100%
                   </p>
-                  <p className="text-xs sm:text-sm lg:text-base text-blue-200">
+                  <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-blue-200 whitespace-nowrap">
                     Authorized
                   </p>
                 </div>

@@ -94,7 +94,7 @@ const About = () => {
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50">
       {/* Hero Banner */}
-      <section className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[650px] overflow-hidden">
+      <section className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] overflow-hidden">
         <motion.img
           initial={{ scale: 1.2 }}
           animate={{ scale: 1 }}
@@ -155,7 +155,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4"
             >
               About Us
             </motion.h1>
@@ -163,7 +163,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="mt-4 text-base md:text-lg xl:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+              className="mt-4 text-sm sm:text-base md:text-lg xl:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed px-2"
             >
               Building excellence in trading since 2015, serving diverse sectors
               with dedication, innovation, and unwavering commitment to quality
@@ -174,7 +174,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
-              className="flex flex-wrap justify-center gap-6 mt-10"
+              className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mt-6 sm:mt-8 md:mt-10"
             >
               {[
                 { label: "Years of Excellence", value: "9+", icon: Award },
@@ -183,15 +183,17 @@ const About = () => {
               ].map((stat, idx) => (
                 <div
                   key={idx}
-                  className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20"
+                  className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl px-3 py-3 sm:px-4 sm:py-3 md:px-6 md:py-4 border border-white/20 min-w-[90px] sm:min-w-[110px]"
                 >
-                  <div className="flex items-center gap-3 mb-2">
-                    <stat.icon className="w-6 h-6 text-amber-400" />
-                    <p className="text-3xl xl:text-4xl font-bold text-amber-400">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-1 sm:mb-2">
+                    <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-amber-400 flex-shrink-0" />
+                    <p className="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold text-amber-400">
                       {stat.value}
                     </p>
                   </div>
-                  <p className="text-white/90 text-sm">{stat.label}</p>
+                  <p className="text-white/90 text-xs sm:text-sm leading-tight">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </motion.div>

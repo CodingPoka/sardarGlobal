@@ -21,23 +21,23 @@ const Navbar = () => {
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="flex h-20 md:h-22 lg:h-24 xl:h-28 items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <NavLink to="/" className="flex items-center gap-2">
-              {/* <img
-                src={mainLogo}
-                alt="Company Logo"
-                className="h-10 w-auto object-contain"
-              /> */}
-              <img
-                src={mainLogo}
-                alt="Company Logo"
-                className="h-14 md:h-16 lg:h-20 xl:h-24 w-auto object-contain"
-              />
-              <div className="hidden sm:flex flex-col">
-                <span className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-white tracking-tight">
+          <div className="flex items-center gap-2 flex-1 lg:flex-none">
+            <NavLink
+              to="/"
+              className="flex items-center gap-2 w-full lg:w-auto"
+            >
+              <div className="bg-white rounded p-0.5 sm:p-1 shadow-md flex-shrink-0">
+                <img
+                  src={mainLogo}
+                  alt="Company Logo"
+                  className="h-14 sm:h-16 md:h-18 lg:h-20 xl:h-24 w-auto object-contain"
+                />
+              </div>
+              <div className="flex flex-col min-w-0">
+                <span className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-semibold text-white tracking-tight truncate">
                   Sardar Global Trading Co. Ltd
                 </span>
-                <span className="text-base md:text-lg lg:text-xl xl:text-2xl text-amber-400 font-light italic tracking-wide">
+                <span className="text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-amber-400 font-light italic tracking-wide truncate">
                   ---------- Your Personal Trading Company
                 </span>
               </div>

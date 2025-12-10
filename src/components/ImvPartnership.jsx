@@ -21,13 +21,13 @@ const ImvPartnership = () => {
             className="space-y-6"
           >
             {/* Logo and Company Name */}
-            <div className="flex items-center gap-6 mb-8">
+            <div className="flex items-center gap-3 sm:gap-4 md:gap-6 mb-8">
               <img
                 src={imvLogo}
                 alt="IMV Technologies Logo"
-                className="h-24 md:h-28 lg:h-32 w-auto object-contain"
+                className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto object-contain flex-shrink-0"
               />
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-red-600">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-red-600 break-words leading-tight">
                 IMV Technologies
               </h2>
             </div>

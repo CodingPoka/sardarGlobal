@@ -6,7 +6,7 @@ import slide3 from "../assets/homeImage/slide3.png";
 import slide4 from "../assets/homeImage/slide4.jpg";
 import slide5 from "../assets/homeImage/slide5.png";
 import slide6 from "../assets/homeImage/slide6.jpg";
-import slide7 from "../assets/homeImage/slide7.png";
+import slide7 from "../assets/homeImage/slide7.jpg";
 import slide8 from "../assets/homeImage/slide8.jpg";
 import section1 from "../assets/homeImage/section1.jpg";
 import section2 from "../assets/homeImage/section2.jpeg";
@@ -424,7 +424,7 @@ const AnimatedTitle = ({ text, slideIndex, current }) => {
 const AnimatedSubtitle = ({ text, slideIndex, current }) => (
   <motion.p
     key={`subtitle-${current}`}
-    className="mt-4 text-lg md:text-2xl font-medium text-emerald-300 drop-shadow-md"
+    className="mt-4 text-lg md:text-2xl xl:text-3xl 2xl:text-4xl font-medium text-emerald-300 drop-shadow-md"
     variants={subtitleVariants[slideIndex]}
     initial="hidden"
     animate="visible"
@@ -445,11 +445,11 @@ const Home = () => {
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  // Auto change slide (3.5s)
+  // Auto change slide (5s)
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 3500);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -487,7 +487,7 @@ const Home = () => {
 
           {/* Text content */}
           <div className="absolute inset-0 flex items-center justify-center z-20">
-            <div className="max-w-4xl px-4 text-center">
+            <div className="max-w-4xl xl:max-w-6xl 2xl:max-w-7xl px-4 text-center">
               <AnimatedTitle
                 text={activeSlide.title}
                 slideIndex={current}
