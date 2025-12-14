@@ -22,7 +22,7 @@ import AdminFooter from "./components/AdminFooter";
 import ScrollToTop from "./components/ScrollToTop";
 import ImvPartnership from "./components/ImvPartnership";
 import NotFound from "./components/NotFound";
-const router = createBrowserRouter([
+const routerds = createBrowserRouter([
   {
     path: "/",
     element: (
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
         <Navbar />
         <Product />
         <Footer />
-      
+
         {/* <NotFound /> */}
       </div>
     ),
@@ -108,7 +108,7 @@ const router = createBrowserRouter([
         <Navbar />
         <Certificate />
         <Footer />
-        
+
         {/* <NotFound /> */}
       </div>
     ),
@@ -119,8 +119,8 @@ const router = createBrowserRouter([
       <div>
         <ScrollToTop />
         <Navbar />
-          <Partners />
-          <Footer />
+        <Partners />
+        <Footer />
         {/* <NotFound /> */}
       </div>
     ),
@@ -155,8 +155,8 @@ const router = createBrowserRouter([
       <div>
         <ScrollToTop />
         <Navbar />
-            <TopItems />
-            <Footer />
+        <TopItems />
+        <Footer />
 
         {/* <NotFound /> */}
       </div>
