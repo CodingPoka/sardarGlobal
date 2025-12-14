@@ -28,14 +28,14 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <Home />
         <TopItems />
         <ImvPartnership />
         <About />
         <Contact />
-        <Footer /> */}
-        <NotFound />
+        <Footer />
+        {/* <NotFound /> */}
       </div>
     ),
   },
@@ -44,11 +44,11 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <Product />
         <Footer />
-       */}
-        <NotFound />
+      
+        {/* <NotFound /> */}
       </div>
     ),
   },
@@ -68,10 +68,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <Client />
-        <Footer /> */}
-        <NotFound />
+        <Footer />
+        {/* <NotFound /> */}
       </div>
     ),
   },
@@ -80,10 +80,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <Contact />
-        <Footer /> */}
-        <NotFound />
+        <Footer />
+        {/* <NotFound /> */}
       </div>
     ),
   },
@@ -93,10 +93,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <About />
-        <Footer /> */}
-        <NotFound />
+        <Footer />
+        {/* <NotFound /> */}
       </div>
     ),
   },
@@ -105,11 +105,11 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <Certificate />
         <Footer />
-         */}
-        <NotFound />
+        
+        {/* <NotFound /> */}
       </div>
     ),
   },
@@ -118,10 +118,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
           <Partners />
-          <Footer /> */}
-        <NotFound />
+          <Footer />
+        {/* <NotFound /> */}
       </div>
     ),
   },
@@ -130,10 +130,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <Expertise />
-        <Footer /> */}
-        <NotFound />
+        <Footer />
+        {/* <NotFound /> */}
       </div>
     ),
   },
@@ -142,10 +142,10 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
         <ImvPartnership />
-        <Footer /> */}
-        <NotFound />
+        <Footer />
+        {/* <NotFound /> */}
       </div>
     ),
   },
@@ -154,11 +154,11 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        {/* <Navbar />
+        <Navbar />
             <TopItems />
-            <Footer /> */}
+            <Footer />
 
-        <NotFound />
+        {/* <NotFound /> */}
       </div>
     ),
   },
@@ -194,7 +194,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/admin/AdminTopItems/sardarGlobal/bangladesh/trade/king",
+    path: "/admin/AdminTopItems/sardarGlobal/bangladesh/trade/",
     element: (
       <div>
         <ScrollToTop />
@@ -205,7 +205,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/admin/AdminProduct/sardarGlobal/bangladesh/trade/king",
+    path: "/admin/AdminProduct/sardarGlobal/bangladesh/trade/",
     element: (
       <div>
         <ScrollToTop />
