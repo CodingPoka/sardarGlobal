@@ -37,7 +37,7 @@ const Navbar = () => {
                 <span className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-semibold text-white tracking-tight truncate">
                   Sardar Global Trading Co. Ltd
                 </span>
-                <span className="text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-amber-400 font-light italic tracking-wide truncate">
+                <span className="text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-2xl text-amber-400 font-light italic tracking-wide truncate">
                   ---------- Your Personal Trading Company
                 </span>
               </div>

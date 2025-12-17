@@ -22,7 +22,7 @@ import AdminFooter from "./components/AdminFooter";
 import ScrollToTop from "./components/ScrollToTop";
 import ImvPartnership from "./components/ImvPartnership";
 import NotFound from "./components/NotFound";
-const routerd = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: (
