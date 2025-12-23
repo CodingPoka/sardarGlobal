@@ -34,10 +34,10 @@ const Navbar = () => {
                 />
               </div>
               <div className="flex flex-col min-w-0">
-                <span className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-semibold text-white tracking-tight truncate">
+                <span className="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-semibold text-white tracking-tight truncate">
                   Sardar Global Trading Co. Ltd
                 </span>
-                <span className="text-xs sm:text-sm md:text-base lg:text-base xl:text-lg 2xl:text-2xl text-amber-400 font-light italic tracking-wide truncate">
+                <span className="text-xs sm:text-base md:text-lg lg:text-base xl:text-lg 2xl:text-2xl text-amber-400 font-light italic tracking-wide truncate">
                   ---------- Your Personal Trading Company
                 </span>
               </div>
