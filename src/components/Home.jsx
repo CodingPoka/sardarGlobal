@@ -505,14 +505,14 @@ const Home = () => {
         {/* Navigation Buttons */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 md:p-4 rounded-full transition-all hover:scale-110 border border-white/30"
+          className="absolute left-4 bottom-20 md:left-8 md:top-1/2 md:-translate-y-1/2 md:bottom-auto z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 md:p-4 rounded-full transition-all hover:scale-110 border border-white/30"
           aria-label="Previous slide"
         >
           <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 md:p-4 rounded-full transition-all hover:scale-110 border border-white/30"
+          className="absolute right-4 bottom-20 md:right-8 md:top-1/2 md:-translate-y-1/2 md:bottom-auto z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 md:p-4 rounded-full transition-all hover:scale-110 border border-white/30"
           aria-label="Next slide"
         >
           <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
