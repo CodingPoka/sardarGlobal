@@ -563,7 +563,7 @@ const Home = () => {
               </h2>
 
               <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-blue-600">
-                Consistency that builds long-term partnerships.
+                Consistency That Builds Long Term Partnerships.
               </p>
 
               <div className="space-y-4">
@@ -655,7 +655,7 @@ const Home = () => {
               </h2>
 
               <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-green-600">
-                Delivering essential goods where they matter most.
+                Delivering Essential Goods Where They Matter Most.
               </p>
 
               <div className="space-y-4">
@@ -702,7 +702,7 @@ const Home = () => {
               </h2>
 
               <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-purple-600">
-                Sustainable, ethical, responsible supply chain.
+                Sustainable, Ethical, Responsible Supply Chain.
               </p>
 
               <div className="space-y-4">
