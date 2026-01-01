@@ -10,6 +10,7 @@ import {
   Instagram,
   Linkedin,
   Twitter,
+  MessageCircle,
   ArrowRight,
   Heart,
 } from "lucide-react";
@@ -29,7 +30,6 @@ const Footer = () => {
     { name: "Client", path: "/clients" },
     { name: "Partner", path: "/partners" },
     { name: "Expertise", path: "/expertise" },
-    { name: "Certificate", path: "/certificate" },
   ];
 
   const contactInfo = [
@@ -56,20 +56,24 @@ const Footer = () => {
             viewport={{ once: true }}
             className="lg:col-span-1"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <img
-                src={mainLogo}
-                alt="Company Logo"
-                className="h-16 w-auto object-contain"
-              />
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6">
+              <div className="bg-white rounded p-1 shadow-md flex-shrink-0">
+                <img
+                  src={mainLogo}
+                  alt="Company Logo"
+                  className="h-16 sm:h-18 md:h-20 w-auto object-contain"
+                />
+              </div>
+              <div className="flex flex-col min-w-0">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-tight break-words">
+                  Sardar Global Trading Co. Ltd
+                </h3>
+                <p className="text-amber-400 text-sm sm:text-base italic leading-tight">
+                  ----- Your Personal Trading Company
+                </p>
+              </div>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-3">
-              Sardar Global Trading Co. Ltd
-            </h3>
-            <p className="text-amber-400 text-base italic mb-4">
-              ----- Your Personal Trading Company
-            </p>
-            <p className="text-gray-300 text-base leading-relaxed mb-6">
+            <p className="text-gray-300 text-base leading-relaxed mb-6 text-justify">
               SGTCL is a renowned international trading company based in
               Bangladesh, established in 2015. We specialize in various sectors
               providing quality products and services globally.
@@ -78,28 +82,44 @@ const Footer = () => {
             {/* Social Media */}
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61554819345474"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-blue-800/50 hover:bg-amber-500 p-2.5 rounded-full transition-all duration-300 hover:scale-110"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-blue-800/50 hover:bg-amber-500 p-2.5 rounded-full transition-all duration-300 hover:scale-110"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-blue-800/50 hover:bg-amber-500 p-2.5 rounded-full transition-all duration-300 hover:scale-110"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-blue-800/50 hover:bg-amber-500 p-2.5 rounded-full transition-all duration-300 hover:scale-110"
               >
                 <Twitter className="w-5 h-5" />
+              </a>
+              <a
+                href="https://wa.me/8801713033888"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-800/50 hover:bg-amber-500 p-2.5 rounded-full transition-all duration-300 hover:scale-110"
+              >
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </motion.div>
