@@ -382,10 +382,10 @@ const About = () => {
               className="space-y-6"
             >
               <div className="bg-gradient-to-br from-red-50 to-pink-50 p-8 rounded-3xl border-2 border-red-100">
-                <h3 className="text-2xl md:text-3xl font-bold text-red-700 mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold text-red-700 mb-6 text-center">
                   About SGTCL
                 </h3>
-                <p className="text-gray-700 text-base md:text-lg xl:text-xl leading-relaxed mb-6">
+                <p className="text-gray-700 text-base md:text-lg xl:text-xl leading-relaxed mb-6 text-justify">
                   Sardar Global Trading Co. Ltd. (SGTCL) is a
                   government-registered private limited company established in{" "}
                   <span className="font-bold text-red-600">2015</span> under the
@@ -394,7 +394,7 @@ const About = () => {
                   supply, import, and indenting of a diverse range of general
                   and technical items.
                 </p>
-                <p className="text-gray-700 text-base md:text-lg xl:text-xl leading-relaxed">
+                <p className="text-gray-700 text-base md:text-lg xl:text-xl leading-relaxed text-justify">
                   Our extensive expertise, coupled with a dedicated team of
                   professionals, ensures reliable service, competitive pricing,
                   and on-time deliveries, earning the trust and satisfaction of

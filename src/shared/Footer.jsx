@@ -234,7 +234,7 @@ const Footer = () => {
               <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" />
               <span className="text-gray-300">by</span>
               <a
-                href="YOUR_LINKEDIN_URL_HERE"
+                href="https://wa.me/8801706656622"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-amber-400 hover:text-amber-300 font-semibold transition-colors"
