@@ -20,16 +20,13 @@ const ImvPartnership = () => {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            {/* Logo and Company Name */}
-            <div className="flex items-center gap-3 sm:gap-4 md:gap-6 mb-8">
+            {/* Logo */}
+            <div className="flex items-center mb-8">
               <img
                 src={imvLogo}
                 alt="IMV Technologies Logo"
-                className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto object-contain flex-shrink-0"
+                className="h-24 sm:h-28 md:h-32 lg:h-40 xl:h-48 w-auto object-contain"
               />
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-red-600 break-words leading-tight">
-                IMV Technologies
-              </h2>
             </div>
 
             {/* Heading */}
@@ -50,19 +47,19 @@ const ImvPartnership = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="space-y-4"
             >
-              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+              <p className="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
                 Sardar Global Trading Co. Ltd. (SGTCL) is honored to be the sole
                 and only one official distributor of IMV Technologies in
                 Bangladesh, representing the world's leading name in
                 reproductive biotechnology, artificial insemination equipment,
                 and livestock productivity solutions.
               </p>
-              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+              <p className="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
                 IMV Technologies is a global leader in reproductive
                 biotechnology and artificial insemination solutions, operating
                 in over 163 countries worldwide.
               </p>
-              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+              <p className="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
                 Through this exclusive partnership, we bring world-class AI
                 consumables, cryogenic preservation systems, and laboratory
                 instruments to Bangladesh's livestock and dairy sectors. Our
