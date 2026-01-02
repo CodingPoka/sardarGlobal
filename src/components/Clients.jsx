@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Building2,
@@ -115,6 +115,8 @@ const Clients = () => {
       logo: american,
     },
   ];
+
+  const [hoveredCard, setHoveredCard] = useState(null);
 
   // Animation variants
   const containerVariants = {
@@ -326,6 +328,8 @@ const Clients = () => {
             <motion.div
               key={client.id}
               variants={itemVariants}
+              onMouseEnter={() => setHoveredCard(client.id)}
+              onMouseLeave={() => setHoveredCard(null)}
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)",
@@ -335,9 +339,18 @@ const Clients = () => {
             >
               {/* Card Number Badge */}
               <div className="absolute top-4 right-4 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition-transform duration-300 z-10">
-                <span className="text-white font-bold text-sm sm:text-base lg:text-lg">
+                <motion.span
+                  animate={{
+                    rotate: hoveredCard === client.id ? 360 : 0,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeInOut",
+                  }}
+                  className="text-white font-bold text-sm sm:text-base lg:text-lg inline-block"
+                >
                   {index + 1}
-                </span>
+                </motion.span>
               </div>
 
               {/* Logo Container */}
