@@ -97,7 +97,7 @@ const Expertise = () => {
     },
     {
       id: 2,
-      title: "Disaster & Refugee Support",
+      title: " Disaster & Rohingya Refugee Response",
       icon: Building2,
       color: "blue",
       gradient: "from-blue-500 to-blue-700",
@@ -107,6 +107,8 @@ const Expertise = () => {
         "Supplying construction materials, shelter kits, jerry cans, mosquito nets, sleeping mats, jute bags, and other essential items for UNHCR operations in Cox's Bazar, supporting refugee relief efforts.",
       products: [
         "Construction Materials",
+        "Education Kits",
+        "Geo Bags",
         "Shelter Kits",
         "Jerry Cans",
         "Mosquito Nets",
@@ -368,7 +370,7 @@ const Expertise = () => {
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 text-sm md:text-base xl:text-lg leading-relaxed mb-4 relative z-10">
+                <p className="text-gray-600 text-sm md:text-base xl:text-lg leading-relaxed mb-4 relative z-10 text-justify">
                   {sector.description.substring(0, 150)}...
                 </p>
 
@@ -475,7 +477,7 @@ const Expertise = () => {
                     </h3>
                   </div>
 
-                  <p className="text-gray-700 text-base md:text-lg xl:text-xl leading-relaxed mb-8">
+                  <p className="text-gray-700 text-base md:text-lg xl:text-xl leading-relaxed mb-8 text-justify">
                     {expertiseData[activeSection].description}
                   </p>
 
