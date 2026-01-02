@@ -403,7 +403,7 @@ const AnimatedTitle = ({ text, slideIndex, current }) => {
       initial="hidden"
       animate="visible"
     >
-      <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white drop-shadow-lg leading-tight">
+      <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-white drop-shadow-lg leading-tight">
         {words.map((word, i) => (
           <motion.span
             key={`${word}-${i}`}
@@ -424,7 +424,7 @@ const AnimatedTitle = ({ text, slideIndex, current }) => {
 const AnimatedSubtitle = ({ text, slideIndex, current }) => (
   <motion.p
     key={`subtitle-${current}`}
-    className="mt-4 text-lg md:text-2xl xl:text-3xl 2xl:text-4xl font-medium text-emerald-300 drop-shadow-md"
+    className="mt-4 text-base md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-emerald-300 drop-shadow-md"
     variants={subtitleVariants[slideIndex]}
     initial="hidden"
     animate="visible"
