@@ -1,7 +1,5 @@
-
-
-import React from 'react';
-import { Search } from 'lucide-react';
+import React from "react";
+import { Search } from "lucide-react";
 
 const NotFound = () => {
   return (
@@ -26,14 +24,21 @@ const NotFound = () => {
         <div className="flex justify-center mb-12">
           <div className="relative">
             <div className="absolute inset-0 bg-amber-400 blur-3xl opacity-20 rounded-full"></div>
-            <Search className="relative w-24 h-24 md:w-32 md:h-32 text-amber-400/50" strokeWidth={1.5} />
+            <Search
+              className="relative w-24 h-24 md:w-32 md:h-32 text-amber-400/50"
+              strokeWidth={1.5}
+            />
           </div>
         </div>
 
         {/* Company Info */}
         <div className="mb-12">
           <p className="text-xl md:text-2xl font-semibold text-white mb-2">
-            Sardar Global Trading Co. Ltd
+            <span style={{ color: "#807d7d" }}>S</span>ardar{" "}
+            <span style={{ color: "#e03131" }}>G</span>lobal{" "}
+            <span style={{ color: "#807d7d" }}>T</span>rading{" "}
+            <span style={{ color: "#807d7d" }}>C</span>o.{" "}
+            <span style={{ color: "#807d7d" }}>L</span>td
           </p>
           <p className="text-sm md:text-base text-amber-400 italic">
             Your Personal Trading Company

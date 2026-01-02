@@ -66,7 +66,11 @@ const Footer = () => {
               </div>
               <div className="flex flex-col min-w-0">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-tight break-words">
-                  Sardar Global Trading Co. Ltd
+                  <span style={{ color: "#807d7d" }}>S</span>ardar{" "}
+                  <span style={{ color: "#e03131" }}>G</span>lobal{" "}
+                  <span style={{ color: "#807d7d" }}>T</span>rading{" "}
+                  <span style={{ color: "#807d7d" }}>C</span>o.{" "}
+                  <span style={{ color: "#807d7d" }}>L</span>td
                 </h3>
                 <p className="text-amber-400 text-sm sm:text-base italic leading-tight">
                   ----- Your Personal Trading Company
@@ -74,9 +78,14 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-300 text-base leading-relaxed mb-6 text-justify">
-              SGTCL is a renowned international trading company based in
-              Bangladesh, established in 2015. We specialize in various sectors
-              providing quality products and services globally.
+              <span style={{ color: "#807d7d" }}>S</span>
+              <span style={{ color: "#e03131" }}>G</span>
+              <span style={{ color: "#807d7d" }}>T</span>
+              <span style={{ color: "#807d7d" }}>C</span>
+              <span style={{ color: "#807d7d" }}>L</span> is a renowned
+              international trading company based in Bangladesh, established in
+              2015. We specialize in various sectors providing quality products
+              and services globally.
             </p>
 
             {/* Social Media */}
@@ -218,7 +227,11 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-gray-300 text-base text-center"
             >
-              © {currentYear} Sardar Global Trading Co. Ltd. All rights
+              © {currentYear} <span style={{ color: "#807d7d" }}>S</span>ardar{" "}
+              <span style={{ color: "#e03131" }}>G</span>lobal{" "}
+              <span style={{ color: "#807d7d" }}>T</span>rading{" "}
+              <span style={{ color: "#807d7d" }}>C</span>o.{" "}
+              <span style={{ color: "#807d7d" }}>L</span>td. All rights
               reserved.
             </motion.p>
 

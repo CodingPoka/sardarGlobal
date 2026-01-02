@@ -238,8 +238,12 @@ const About = () => {
             </h2>
             <p className="text-gray-600 text-base md:text-lg xl:text-xl leading-relaxed mb-10">
               Explore the story, vision, mission, and core values that drive
-              Sardar Global Trading Co. Ltd. to deliver excellence across
-              diverse industries.
+              <span style={{ color: "#807d7d" }}>S</span>ardar{" "}
+              <span style={{ color: "#e03131" }}>G</span>lobal{" "}
+              <span style={{ color: "#807d7d" }}>T</span>rading{" "}
+              <span style={{ color: "#807d7d" }}>C</span>o.{" "}
+              <span style={{ color: "#807d7d" }}>L</span>td. to deliver
+              excellence across diverse industries.
             </p>
 
             {/* Navigation Cards */}
@@ -383,10 +387,23 @@ const About = () => {
             >
               <div className="bg-gradient-to-br from-red-50 to-pink-50 p-8 rounded-3xl border-2 border-red-100">
                 <h3 className="text-2xl md:text-3xl font-bold text-red-700 mb-6 text-center">
-                  About SGTCL
+                  About <span style={{ color: "#807d7d" }}>S</span>
+                  <span style={{ color: "#e03131" }}>G</span>
+                  <span style={{ color: "#807d7d" }}>T</span>
+                  <span style={{ color: "#807d7d" }}>C</span>
+                  <span style={{ color: "#807d7d" }}>L</span>
                 </h3>
                 <p className="text-gray-700 text-base md:text-lg xl:text-xl leading-relaxed mb-6 text-justify">
-                  Sardar Global Trading Co. Ltd. (SGTCL) is a
+                  <span style={{ color: "#807d7d" }}>S</span>ardar{" "}
+                  <span style={{ color: "#e03131" }}>G</span>lobal{" "}
+                  <span style={{ color: "#807d7d" }}>T</span>rading{" "}
+                  <span style={{ color: "#807d7d" }}>C</span>o.{" "}
+                  <span style={{ color: "#807d7d" }}>L</span>td. (
+                  <span style={{ color: "#807d7d" }}>S</span>
+                  <span style={{ color: "#e03131" }}>G</span>
+                  <span style={{ color: "#807d7d" }}>T</span>
+                  <span style={{ color: "#807d7d" }}>C</span>
+                  <span style={{ color: "#807d7d" }}>L</span>) is a
                   government-registered private limited company established in{" "}
                   <span className="font-bold text-red-600">2015</span> under the
                   Companies Act of 1994, Bangladesh. We are a leading
@@ -398,10 +415,15 @@ const About = () => {
                   Our extensive expertise, coupled with a dedicated team of
                   professionals, ensures reliable service, competitive pricing,
                   and on-time deliveries, earning the trust and satisfaction of
-                  our esteemed clients. SGTCL serves various sectors, including
-                  government and semi-government organizations, UN agencies,
-                  NGOs, hospitals, educational institutions, and multinational
-                  companies.
+                  our esteemed clients.{" "}
+                  <span style={{ color: "#807d7d" }}>S</span>
+                  <span style={{ color: "#e03131" }}>G</span>
+                  <span style={{ color: "#807d7d" }}>T</span>
+                  <span style={{ color: "#807d7d" }}>C</span>
+                  <span style={{ color: "#807d7d" }}>L</span> serves various
+                  sectors, including government and semi-government
+                  organizations, UN agencies, NGOs, hospitals, educational
+                  institutions, and multinational companies.
                 </p>
               </div>
 
@@ -842,7 +864,12 @@ const About = () => {
               Meet Our Leaders
             </h2>
             <p className="text-gray-600 text-base md:text-lg xl:text-xl max-w-3xl mx-auto">
-              Experienced professionals guiding SGTCL towards excellence and
+              Experienced professionals guiding{" "}
+              <span style={{ color: "#807d7d" }}>S</span>
+              <span style={{ color: "#e03131" }}>G</span>
+              <span style={{ color: "#807d7d" }}>T</span>
+              <span style={{ color: "#807d7d" }}>C</span>
+              <span style={{ color: "#807d7d" }}>L</span> towards excellence and
               sustainable growth
             </p>
           </motion.div>
@@ -913,8 +940,12 @@ const About = () => {
 
                 <div className="pt-4 border-t border-indigo-200">
                   <p className="text-gray-600 text-sm italic">
-                    Leading SGTCL with vision, dedication, and commitment to
-                    excellence since 2015
+                    Leading <span style={{ color: "#807d7d" }}>S</span>
+                    <span style={{ color: "#e03131" }}>G</span>
+                    <span style={{ color: "#807d7d" }}>T</span>
+                    <span style={{ color: "#807d7d" }}>C</span>
+                    <span style={{ color: "#807d7d" }}>L</span> with vision,
+                    dedication, and commitment to excellence since 2015
                   </p>
                 </div>
               </div>
@@ -1011,7 +1042,11 @@ const About = () => {
             </h2>
             <p className="text-blue-200 text-base md:text-lg xl:text-xl max-w-3xl mx-auto mb-8">
               Join our growing list of satisfied clients and experience the
-              SGTCL difference
+              <span style={{ color: "#807d7d" }}>S</span>
+              <span style={{ color: "#e03131" }}>G</span>
+              <span style={{ color: "#807d7d" }}>T</span>
+              <span style={{ color: "#807d7d" }}>C</span>
+              <span style={{ color: "#807d7d" }}>L</span> difference
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

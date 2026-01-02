@@ -48,9 +48,18 @@ const ImvPartnership = () => {
               className="space-y-4"
             >
               <p className="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
-                Sardar Global Trading Co. Ltd. (SGTCL) is honored to be the sole
-                and only one official distributor of IMV Technologies in
-                Bangladesh, representing the world's leading name in
+                <span style={{ color: "#807d7d" }}>S</span>ardar{" "}
+                <span style={{ color: "#e03131" }}>G</span>lobal{" "}
+                <span style={{ color: "#807d7d" }}>T</span>rading{" "}
+                <span style={{ color: "#807d7d" }}>C</span>o.{" "}
+                <span style={{ color: "#807d7d" }}>L</span>td. (
+                <span style={{ color: "#807d7d" }}>S</span>
+                <span style={{ color: "#e03131" }}>G</span>
+                <span style={{ color: "#807d7d" }}>T</span>
+                <span style={{ color: "#807d7d" }}>C</span>
+                <span style={{ color: "#807d7d" }}>L</span>) is honored to be
+                the sole and only one official distributor of IMV Technologies
+                in Bangladesh, representing the world's leading name in
                 reproductive biotechnology, artificial insemination equipment,
                 and livestock productivity solutions.
               </p>

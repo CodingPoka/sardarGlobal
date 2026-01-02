@@ -347,7 +347,11 @@ const Contact = () => {
                       Registered Address
                     </span>
                     <br />
-                    Sardar Global Trading Co. Ltd.
+                    <span style={{ color: "#807d7d" }}>S</span>ardar{" "}
+                    <span style={{ color: "#e03131" }}>G</span>lobal{" "}
+                    <span style={{ color: "#807d7d" }}>T</span>rading{" "}
+                    <span style={{ color: "#807d7d" }}>C</span>o.{" "}
+                    <span style={{ color: "#807d7d" }}>L</span>td.
                     <br />
                     70, Bir Uttam CR Dutta Road, 7/37-B,
                     <br />
@@ -364,7 +368,11 @@ const Contact = () => {
                       Corporate Address
                     </span>
                     <br />
-                    Sardar Global Trading Co. Ltd.
+                    <span style={{ color: "#807d7d" }}>S</span>ardar{" "}
+                    <span style={{ color: "#e03131" }}>G</span>lobal{" "}
+                    <span style={{ color: "#807d7d" }}>T</span>rading{" "}
+                    <span style={{ color: "#807d7d" }}>C</span>o.{" "}
+                    <span style={{ color: "#807d7d" }}>L</span>td.
                     <br />
                     House # 11, Road # 4
                     <br />

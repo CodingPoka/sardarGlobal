@@ -321,10 +321,14 @@ const Expertise = () => {
             Diverse Sectors, Tailored Solutions
           </h2>
           <p className="text-gray-600 text-base md:text-lg xl:text-xl leading-relaxed">
-            SGTCL operates across diverse sectors, providing a wide range of
-            products and services tailored to meet the needs of various
-            industries. From construction support to advanced IT solutions, we
-            deliver excellence in every field.
+            <span style={{ color: "#807d7d" }}>S</span>
+            <span style={{ color: "#e03131" }}>G</span>
+            <span style={{ color: "#807d7d" }}>T</span>
+            <span style={{ color: "#807d7d" }}>C</span>
+            <span style={{ color: "#807d7d" }}>L</span> operates across diverse
+            sectors, providing a wide range of products and services tailored to
+            meet the needs of various industries. From construction support to
+            advanced IT solutions, we deliver excellence in every field.
           </p>
         </motion.div>
 

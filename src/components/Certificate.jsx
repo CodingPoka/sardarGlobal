@@ -184,11 +184,15 @@ const Certificate = () => {
               Globally Trusted.
             </h2>
             <p className="text-gray-600 text-base md:text-lg xl:text-xl leading-relaxed">
-              Sardar Global Trading Co. Ltd. operates under full legal
-              registration in Bangladesh, with active Import, Export, Indenting,
-              Trade License, TIN and VAT registrations. These certifications
-              enable us to participate in local and international trade,
-              supporting government and NGO projects reliably.
+              <span style={{ color: "#807d7d" }}>S</span>ardar{" "}
+              <span style={{ color: "#e03131" }}>G</span>lobal{" "}
+              <span style={{ color: "#807d7d" }}>T</span>rading{" "}
+              <span style={{ color: "#807d7d" }}>C</span>o.{" "}
+              <span style={{ color: "#807d7d" }}>L</span>td. operates under full
+              legal registration in Bangladesh, with active Import, Export,
+              Indenting, Trade License, TIN and VAT registrations. These
+              certifications enable us to participate in local and international
+              trade, supporting government and NGO projects reliably.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="bg-gradient-to-br from-blue-900 to-blue-700 text-white px-6 py-4 rounded-xl shadow-lg">

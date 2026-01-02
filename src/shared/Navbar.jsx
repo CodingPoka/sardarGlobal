@@ -35,7 +35,11 @@ const Navbar = () => {
               </div>
               <div className="flex flex-col min-w-0">
                 <span className="text-base sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-semibold text-white tracking-tight truncate">
-                  Sardar Global Trading Co. Ltd
+                  <span style={{ color: "#807d7d" }}>S</span>ardar{" "}
+                  <span style={{ color: "#e03131" }}>G</span>lobal{" "}
+                  <span style={{ color: "#807d7d" }}>T</span>rading{" "}
+                  <span style={{ color: "#807d7d" }}>C</span>o.{" "}
+                  <span style={{ color: "#807d7d" }}>L</span>td
                 </span>
                 <span className="text-[11px] sm:text-base md:text-lg lg:text-base xl:text-lg 2xl:text-2xl text-amber-400 font-light italic tracking-wide truncate">
                   ---------- Your Personal Trading Company

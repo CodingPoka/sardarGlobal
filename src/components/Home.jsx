@@ -575,7 +575,11 @@ const Home = () => {
 
               <div className="space-y-4">
                 <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed text-justify">
-                  Since 2015, Sardar Global Trading Co. Ltd. has delivered
+                  Since 2015, <span style={{ color: "#807d7d" }}>S</span>ardar{" "}
+                  <span style={{ color: "#e03131" }}>G</span>lobal{" "}
+                  <span style={{ color: "#807d7d" }}>T</span>rading{" "}
+                  <span style={{ color: "#807d7d" }}>C</span>o.{" "}
+                  <span style={{ color: "#807d7d" }}>L</span>td. has delivered
                   products that meet international standards across
                   humanitarian, industrial, agricultural, and commercial
                   sectors. We ensure every item — from relief materials to
@@ -714,7 +718,12 @@ const Home = () => {
 
               <div className="space-y-4">
                 <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed text-justify">
-                  From eco-conscious sourcing to responsible partnerships, SGTCL
+                  From eco-conscious sourcing to responsible partnerships,{" "}
+                  <span style={{ color: "#807d7d" }}>S</span>
+                  <span style={{ color: "#e03131" }}>G</span>
+                  <span style={{ color: "#807d7d" }}>T</span>
+                  <span style={{ color: "#807d7d" }}>C</span>
+                  <span style={{ color: "#807d7d" }}>L</span>
                   is committed to sustainability in every step of our
                   operations. We work with global manufacturers who follow
                   environmental standards, and we promote long-term solutions
