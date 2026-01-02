@@ -29,6 +29,7 @@ const Partners = () => {
       id: 1,
       logo: plogo6,
       title: "IMV Technology, France",
+      titleColor: "#ef4444",
       type: "Authorized Sole Distributor",
       product: "AI Consumable and AI LAB Equipment",
       description:
@@ -43,6 +44,7 @@ const Partners = () => {
       id: 2,
       logo: plogo1,
       title: "SHIJIAZHUANG LEAMANDOU CHEMICALS CO. LTD & LEMANDOU",
+      titleColor: "#1aab40",
       type: "Sole Distributor",
       product: "Aluminum Foil",
       description:
@@ -59,6 +61,7 @@ const Partners = () => {
       logo: plogo2,
       title:
         "Chengdu Golden Bridge Technology Co., Ltd., Chengdu ARO Technology Co., Ltd., Chengdu AiAo Technology Co. Ltd.",
+      titleColor: "#000000",
       type: "Sole Distributor",
       product: "Liquid Nitrogen Container",
       description:
@@ -74,6 +77,7 @@ const Partners = () => {
       id: 4,
       logo: plogo3,
       title: "Bankim Plast Private Limited",
+      titleColor: "#ef4444",
       type: "Authorized Sole Distributor",
       product: "Master Batch",
       description:
@@ -89,6 +93,7 @@ const Partners = () => {
       id: 5,
       logo: plogo6,
       title: "Nelson Techno Medical Co., Ltd.",
+      titleColor: "#ef4444",
       type: "Authorized Sole Distributor",
       product: "Veterinary & Livestock Equipment, AI Accessories",
       description:
@@ -103,6 +108,7 @@ const Partners = () => {
       id: 6,
       logo: plogo5,
       title: "Zhangjiagang Weinhold Industrial Co., Ltd",
+      titleColor: "#1aa4ab",
       type: "Sole Distributor",
       product: "Artificial Insemination Hand Gloves",
       description:
@@ -118,6 +124,7 @@ const Partners = () => {
       id: 7,
       logo: plogo7,
       title: "Paper Bag Mfg Co & Pure Trade Links (P) Ltd.",
+      titleColor: "#ef4444",
       type: "Authorized Distributor",
       product: "Kraft Paper and Kraft Paper Bag",
       description:
@@ -132,6 +139,7 @@ const Partners = () => {
       id: 8,
       logo: plogo8,
       title: "Fujian Yamei Industry & Trade CO., Ltd.",
+      titleColor: "#1aab71",
       type: "Authorized Distributor",
       product: "Mosquito Net",
       description:
@@ -147,6 +155,7 @@ const Partners = () => {
       id: 9,
       logo: plogo9,
       title: "NRS Relief",
+      titleColor: "#1ac934",
       type: "Authorized Distributor",
       product: "Sleeping Mats",
       description: "Authorized Distributor of NRS Relief for Sleeping Mats.",
@@ -434,7 +443,10 @@ const Partners = () => {
               {/* Card Content */}
               <div className="p-7 sm:p-8 lg:p-9">
                 {/* Partner Title */}
-                <h3 className="text-xl sm:text-2xl lg:text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors leading-tight line-clamp-2">
+                <h3
+                  className="text-xl sm:text-2xl lg:text-2xl font-bold mb-4 transition-colors leading-tight line-clamp-2"
+                  style={{ color: partner.titleColor }}
+                >
                   {partner.title}
                 </h3>
 

@@ -435,6 +435,7 @@ const AnimatedSubtitle = ({ text, slideIndex, current }) => (
 
 const Home = () => {
   const [current, setCurrent] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   // Navigation functions
   const nextSlide = () => {
@@ -445,21 +446,27 @@ const Home = () => {
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  // Auto change slide (5s)
+  // Auto change slide (3s) - pause on hover
   useEffect(() => {
+    if (isHovered) return; // Don't auto-change if hovered
+
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isHovered]);
 
   const activeSlide = slides[current];
 
   return (
     <div className="w-full min-h-screen bg-slate-50">
       {/* Hero Slider */}
-      <section className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
+      <section
+        className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         {/* Background Images - all rendered with crossfade */}
         <div className="absolute inset-0">
           {slides.map((slide, index) => (
@@ -556,9 +563,9 @@ const Home = () => {
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
-                QUALITY.{" "}
+                QUALITY{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  FOR TRUST.
+                  FOR TRUST
                 </span>
               </h2>
 
@@ -567,7 +574,7 @@ const Home = () => {
               </p>
 
               <div className="space-y-4">
-                <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
+                <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed text-justify">
                   Since 2015, Sardar Global Trading Co. Ltd. has delivered
                   products that meet international standards across
                   humanitarian, industrial, agricultural, and commercial
@@ -648,9 +655,9 @@ const Home = () => {
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
-                SUPPLY.{" "}
+                SUPPLY{" "}
                 <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-                  FOR IMPACT.
+                  FOR IMPACT
                 </span>
               </h2>
 
@@ -659,7 +666,7 @@ const Home = () => {
               </p>
 
               <div className="space-y-4">
-                <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
+                <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed text-justify">
                   From refugee support operations in Cox's Bazar to NGO and UN
                   procurement programs, we supply lifesaving materials including
                   shelter kits, mosquito nets, jerry cans, food and non-food
@@ -695,9 +702,9 @@ const Home = () => {
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
-                COMMITMENT.{" "}
+                COMMITMENT{" "}
                 <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  FOR FUTURE.
+                  FOR FUTURE
                 </span>
               </h2>
 
@@ -706,7 +713,7 @@ const Home = () => {
               </p>
 
               <div className="space-y-4">
-                <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
+                <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed text-justify">
                   From eco-conscious sourcing to responsible partnerships, SGTCL
                   is committed to sustainability in every step of our
                   operations. We work with global manufacturers who follow
