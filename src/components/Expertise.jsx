@@ -21,10 +21,8 @@ import expertBanner from "../assets/expertiseImage/expertBanner.jpg";
 // Sector 1 - Construction
 
 import s1a from "../assets/expertiseImage/s1a.jpg";
-import s1b from "../assets/expertiseImage/s1b.jpg";
-import s1c from "../assets/expertiseImage/s1c.jpg";
-import s1d from "../assets/expertiseImage/s1d.jpg";
-import s1e from "../assets/expertiseImage/s1e.jpg";
+import s1b from "../assets/expertiseImage/s1b.jpeg";
+import s1c from "../assets/expertiseImage/s1c.jpeg";
 
 // Sector 2 - Printing & Packaging
 import s2a from "../assets/expertiseImage/s2a.jpg";
@@ -33,7 +31,7 @@ import s2c from "../assets/expertiseImage/s2c.jpg";
 
 // Sector 3 - Artificial Insemination
 import s3a from "../assets/expertiseImage/s3a.jpg";
-import s3b from "../assets/expertiseImage/s3b.jpg";
+import s3b from "../assets/expertiseImage/s3b.jpeg";
 import s3c from "../assets/expertiseImage/s3c.jpeg";
 
 // Sector 4 - Chemical Supplies
@@ -42,9 +40,9 @@ import s4b from "../assets/expertiseImage/s4b.jpg";
 import s4c from "../assets/expertiseImage/s4c.jpg";
 
 // Sector 5 - Agriculture
-import s5a from "../assets/expertiseImage/s5a.jpg";
-import s5b from "../assets/expertiseImage/s5b.jpg";
-import s5c from "../assets/expertiseImage/s5c.jpg";
+import s5a from "../assets/expertiseImage/s5a.jpeg";
+import s5b from "../assets/expertiseImage/s5b.jpeg";
+import s5c from "../assets/expertiseImage/s5c.jpeg";
 
 // Sector 6 - Relief & Gift Items
 import s6a from "../assets/expertiseImage/s6a.jpeg";
@@ -116,7 +114,7 @@ const Expertise = () => {
         "Jute Bags",
         "Essential Relief Items",
       ],
-      images: [s1a, s1b, s1c, s1d, s1e],
+      images: [s1a, s1b, s1c],
       stats: { projects: "50+", clients: "UNHCR, NGOs" },
     },
     {
@@ -516,7 +514,7 @@ const Expertise = () => {
                       transition={{ delay: idx * 0.1 }}
                       whileHover={{ scale: 1.05, zIndex: 10 }}
                       className={`relative rounded-2xl overflow-hidden shadow-lg ${
-                        idx === 0 ? "col-span-2 h-64 md:h-80" : "h-40 md:h-48"
+                        idx === 0 ? "col-span-2 h-64 md:h-80" : "h-72 md:h-96"
                       }`}
                     >
                       <img
