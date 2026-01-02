@@ -493,7 +493,7 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/55 to-black/30 z-10" />
 
           {/* Text content */}
-          <div className="absolute inset-0 flex items-center justify-center z-20">
+          <div className="absolute inset-0 flex items-center justify-center z-20 pt-0 lg:pt-80 xl:pt-96">
             <div className="max-w-4xl xl:max-w-6xl 2xl:max-w-7xl px-4 text-center">
               <AnimatedTitle
                 text={activeSlide.title}
