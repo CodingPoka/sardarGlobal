@@ -39,7 +39,7 @@ const Footer = () => {
     },
     { icon: Phone, text: "+8801 71303 3888" },
     { icon: Phone, text: "+8802 9614490" },
-    { icon: Mail, text: "info@sardarglobal.net" },
+    { icon: Mail, text: "sardar@sardarglobal.net" },
     { icon: Globe, text: "www.sardarglobal.net" },
   ];
 

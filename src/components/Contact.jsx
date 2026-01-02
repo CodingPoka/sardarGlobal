@@ -17,6 +17,7 @@ import {
   HeadphonesIcon,
   CheckCircle2,
   Loader2,
+  MessageCircle,
 } from "lucide-react";
 import contactImage from "../assets/contactImage/contact4.jpg";
 
@@ -150,7 +151,7 @@ const Contact = () => {
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 flex-shrink-0" />
                 <span className="text-white font-medium text-xs sm:text-sm md:text-base break-all">
-                  info@sardarglobal.net
+                  sardar@sardarglobal.net
                 </span>
               </div>
             </div>
@@ -395,7 +396,7 @@ const Contact = () => {
                     href="mailto:info@sardarglobal.net"
                     className="text-blue-700 font-medium underline hover:text-blue-900"
                   >
-                    info@sardarglobal.net
+                    sardar@sardarglobal.net
                   </a>
                 </div>
 
@@ -414,22 +415,40 @@ const Contact = () => {
 
               <div className="flex gap-5 sm:gap-6 xl:gap-8 pt-4">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/sardarglobal"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-blue-700 hover:text-blue-900 transition-colors hover:scale-110 transform"
+                  aria-label="Visit our Facebook page"
                 >
                   <Facebook className="w-7 h-7 xl:w-9 xl:h-9" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/sardarglobal"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-pink-500 hover:text-pink-700 transition-colors hover:scale-110 transform"
+                  aria-label="Visit our Instagram page"
                 >
                   <Instagram className="w-7 h-7 xl:w-9 xl:h-9" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/sardarglobal"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-800 transition-colors hover:scale-110 transform"
+                  aria-label="Visit our LinkedIn page"
                 >
                   <LinkedIn className="w-7 h-7 xl:w-9 xl:h-9" />
+                </a>
+                <a
+                  href="https://wa.me/8801713033888"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 hover:text-green-800 transition-colors hover:scale-110 transform"
+                  aria-label="Contact us on WhatsApp"
+                >
+                  <MessageCircle className="w-7 h-7 xl:w-9 xl:h-9" />
                 </a>
               </div>
             </motion.div>
