@@ -24,8 +24,8 @@ import {
 import aboutHero from "../assets/aboutImage/aboutHero.jpg";
 import firstImage from "../assets/aboutImage/firstImage.jpg";
 import ourHistory from "../assets/aboutImage/ourHistory.jpg";
-import chairman from "../assets/aboutImage/chairman.jpg";
-import managingDirector from "../assets/aboutImage/managingDirector.jpg";
+import chairman from "../assets/aboutImage/chairman.jpeg";
+import managingDirector from "../assets/aboutImage/managingDirector.jpeg";
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("history");
@@ -483,13 +483,13 @@ const About = () => {
             viewport={{ once: true }}
             className="max-w-5xl mx-auto"
           >
-            <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-10 md:p-14 xl:p-16 rounded-3xl shadow-2xl text-center relative overflow-hidden">
+            <div className="bg-gradient-to-br from-blue-600 to-indigo-700 px-10 py-6 md:px-14 md:py-8 xl:px-16 xl:py-10 rounded-3xl shadow-2xl text-center relative overflow-hidden">
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32" />
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full -ml-24 -mb-24" />
 
               <div className="relative z-10">
-                <Target className="w-20 h-20 text-amber-400 mx-auto mb-6" />
+                <Target className="w-20 h-20 text-amber-400 mx-auto mb-4" />
                 <p className="text-white text-xl md:text-2xl xl:text-3xl leading-relaxed font-medium">
                   To be a{" "}
                   <span className="font-bold text-amber-300">
@@ -902,10 +902,10 @@ const About = () => {
                     <div>
                       <p className="text-sm text-gray-500">Email</p>
                       <a
-                        href="mailto:jakera@dotbd.com"
+                        href="mailto:jakera@sardarglobal.net"
                         className="font-semibold hover:text-indigo-600 transition-colors break-all"
                       >
-                        jakera@dotbd.com
+                        jakera@sardarglobal.net
                       </a>
                     </div>
                   </div>
@@ -974,10 +974,10 @@ const About = () => {
                     <div>
                       <p className="text-sm text-gray-500">Email</p>
                       <a
-                        href="mailto:sardar@dotbd.com"
+                        href="mailto:sardar@sardarglobal.net"
                         className="font-semibold hover:text-blue-600 transition-colors break-all"
                       >
-                        sardar@dotbd.com
+                        sardar@sardarglobal.net
                       </a>
                     </div>
                   </div>
